@@ -7,16 +7,18 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color: teal;
+  background-color: #424C58;
   color: white;
 }
 
 nav a {
+  float: right;
+  margin-top: 25px;
   text-decoration: none;
 }
 
 .nav-links {
-  width: 30%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -24,11 +26,25 @@ nav a {
 }
 
 .logo {
-  margin-right: 400px;
+  margin-right: 60px;
+  font-size: 22px;
+  background-color: teal;
+  border-radius: 14px;
 }
 
 .menu {
   color:white;
   font-family: Verdana;
   font-size: 18px;
+}
+
+.title {
+  margin-bottom: 25px;
+  margin-top: 25px; 
+  text-align: center;
+  font-family: monospace;
+}
+
+.card card-img{
+  width: 500px;
 }

@@ -2,17 +2,15 @@ import React from 'react';
 import '../App.css';
 import { Link } from "react-router-dom";
 
-
 function Schedule() {
-
   return (
     <nav>
-      <Link className="menu" to="/">
-        <h3 className="logo">JKT48 Theater Schedule</h3>
-      </Link>
       <ul className="nav-links">
-        <Link className="menu" to="/schedule">
-          <li>Schedule</li>
+        <Link className="menu" to="/">
+          <li>JKT48 Theater Schedule</li>
+        </Link>
+        <Link className="menu" to="/">
+          <li>Home</li>
         </Link>
         <Link className="menu" to="/">
           <li>Team J</li>
