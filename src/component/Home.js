@@ -10,7 +10,7 @@ function Home() {
       <h1 className="title">
         WELCOME TO JKT48 THEATER SCHEDULE
       </h1>
-      <Row>
+      <Row className="App">
         {Team && Team.slice(0, 3).map((item, idx) => (
           <Col key={idx}>
             <CardImg src={item.img} alt={item.name} />
@@ -18,21 +18,29 @@ function Home() {
               <CardTitle tag="h5">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>
               <Link to='/team-j'>
-                <Button style={{ backgroundColor: item.button, border: 'none' }}>Lihat Jadwal</Button>
+                <Button 
+                  className="btn-schedule"
+                  style={{ backgroundColor: '#373f48', border: 'none' }}>
+                    Lihat Jadwal
+                </Button>
               </Link>
             </Card>
           </Col>
         ))}
       </Row>
-      <Row>
-        {Team && Team.slice(2, 4).map((item, idx) => (
+      <Row className="App">
+        {Team && Team.slice(3, 4).map((item, idx) => (
           <Col key={idx}>
             <CardImg src={item.img} alt={item.name} />
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>
               <Link to='/team-j'>
-                <Button style={{ backgroundColor: 'rgb(97 11 160)', border: 'none' }}>Lihat Jadwal</Button>
+                <Button 
+                  className="btn-schedule"
+                  style={{ backgroundColor: item.button, border: 'none' }}>
+                    Lihat Jadwal
+                </Button>
               </Link>
             </Card>
           </Col>

@@ -5,3 +5,8 @@
 .card card-img{
   width: 200px;
 }
+
+.setlist-btn {
+  background-color: teal;
+  margin-left: 10px;
+}
