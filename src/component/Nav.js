@@ -12,14 +12,17 @@ function Schedule() {
         <Link className="menu" to="/">
           <li>Home</li>
         </Link>
-        <Link className="menu" to="/">
+        <Link className="menu" to="/team-j">
           <li>Team J</li>
         </Link>
-        <Link className="menu" to="/">
+        <Link className="menu" to="/team-k">
           <li>Team KIII</li>
         </Link>
-        <Link className="menu" to="/">
+        <Link className="menu" to="/team-t">
           <li>Team T</li>
+        </Link>
+        <Link className="menu" to="/academy-class-a">
+          <li>Academy Class A</li>
         </Link>
         <Link className="menu" to="/about">
           <li>About</li>
