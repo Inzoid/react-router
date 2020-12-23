@@ -1,35 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import { Link } from "react-router-dom";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
 
-function Schedule() {
+const Navigation = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
-    <nav>
-      <ul className="nav-links">
-        <Link className="menu" to="/">
-          <li>JKT48 Theater Schedule</li>
-        </Link>
-        <Link className="menu" to="/">
-          <li>Home</li>
-        </Link>
-        <Link className="menu" to="/team-j">
-          <li>Team J</li>
-        </Link>
-        <Link className="menu" to="/team-k">
-          <li>Team KIII</li>
-        </Link>
-        <Link className="menu" to="/team-t">
-          <li>Team T</li>
-        </Link>
-        <Link className="menu" to="/academy-class-a">
-          <li>Academy Class A</li>
-        </Link>
-        <Link className="menu" to="/about">
-          <li>About</li>
-        </Link>
-      </ul>
-    </nav>
+    <Navbar className="nav" dark expand="md">
+      <NavbarBrand href="/">
+        <Link className="menu" to="/"><b>JKT48 Theater Schedule</b></Link>
+      </NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="mr-auto" navbar>
+          <NavItem>
+            <Link className="menu" to="/team-j">Team J</Link>
+          </NavItem>
+          <NavItem>
+            <Link className="menu" to="/team-k">Team KIII</Link>
+          </NavItem>
+          <NavItem>
+            <Link className="menu" to="/team-t">Team T</Link>
+          </NavItem>
+          <NavItem>
+            <Link className="menu" to="/academy-class-a">Academy Class A</Link>
+          </NavItem>
+          <NavItem>
+            <Link className="menu" to="/about">About</Link>
+          </NavItem>
+        </Nav>
+      </Collapse>
+    </Navbar>
   );
 }
 
-export default Schedule;
+export default Navigation;

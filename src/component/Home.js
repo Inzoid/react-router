@@ -7,9 +7,11 @@ import Team from '../store/Team';
 function Home() {
   return (
     <Container>
-      <h1 className="title">
-        WELCOME TO JKT48 THEATER SCHEDULE
-      </h1>
+      <Col>
+        <h2 className="title">
+          WELCOME TO JKT48 THEATER SCHEDULE
+        </h2>
+      </Col>
       <Row className="App">
         {Team && Team.slice(0, 3).map((item, idx) => (
           <Col sm="4" key={idx} style={{marginBottom: '15px'}}>
@@ -17,7 +19,7 @@ function Home() {
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>
-              <Link to='/team-j'>
+              <Link to={item.route}>
                 <Button 
                   className="btn-schedule"
                   style={{ backgroundColor: item.button, border: 'none' }}>
@@ -35,7 +37,7 @@ function Home() {
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>
-              <Link to='/team-j'>
+              <Link to={item.route}>
                 <Button 
                   className="btn-schedule"
                   style={{ backgroundColor: item.button, border: 'none' }}>
