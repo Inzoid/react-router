@@ -12,7 +12,7 @@ function Home() {
       </h1>
       <Row className="App">
         {Team && Team.slice(0, 3).map((item, idx) => (
-          <Col key={idx}>
+          <Col sm="4" key={idx} style={{marginBottom: '15px'}}>
             <CardImg src={item.img} alt={item.name} />
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>
@@ -20,7 +20,7 @@ function Home() {
               <Link to='/team-j'>
                 <Button 
                   className="btn-schedule"
-                  style={{ backgroundColor: '#373f48', border: 'none' }}>
+                  style={{ backgroundColor: item.button, border: 'none' }}>
                     Lihat Jadwal
                 </Button>
               </Link>

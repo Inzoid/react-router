@@ -14,7 +14,7 @@ function TeamJ() {
       <Row>
         <center>
           {Team && Team.slice(1,2).map((item, idx) => (
-            <Col xs="8" key={idx} className="App">
+            <Col sm="8" key={idx} className="App">
             <Carousel />
               <Card body inverse color={item.color}>
                 <CardTitle tag="h5">{item.name}</CardTitle>
@@ -26,7 +26,7 @@ function TeamJ() {
       </Row>
       <Row>
         {Team && Team.slice(1,2).map((item, idx) => (
-          <Col key={idx} className="App">
+          <Col sm="6" key={idx} className="App">
             <CardImg src={item.img} alt={item.name} />
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>
