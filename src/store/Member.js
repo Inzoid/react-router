@@ -3,7 +3,7 @@ const Member = [
     Team_J: [
       { member: "Adriani Elisabeth" },
       { member: "Amanina Afiqah" },
-      { member: "Aninditha Rahma" },
+      { member: "Aninditha Rahma Cahyadi" },
       { member: "Ariella Calista Ichwan" },
       { member: "Azizi Asadel" },
       { member: "Cindy Hapsari Maharani Pujiantoro Putri" },
@@ -22,15 +22,15 @@ const Member = [
   },
   {
     Team_K: [
-      { member: "Aninditha Rahma Cahyadi (Anin) (Team J & Team T)" },
+      { member: "Aninditha Rahma Cahyadi (Anin)" },
       { member: "Angelina Christy (Christy)" },
-      { member: "Beby Chaesara Anadila (Beby) (Announced Graduation)" },
+      { member: "Beby Chaesara Anadila (Beby)" },
       { member: "Fidly Immanda Azzahra (Fia)" },
       { member: "Gita Sekar Andarini (Gita)" },
       { member: "Helisma Putri (Eli)" },
       { member: "Jinan Safa Safira (Jinan)" },
       { member: "Kandiya Rafa Maulidita (Indy)" },
-      { member: "Maria Genoveva Natalia Desy Purnamasari Gunawan (Desy) (Announced Graduation)" },
+      { member: "Maria Genoveva Natalia Desy Purnamasari Gunawan (Desy)" },
       { member: "Mutiara Azzahra (Muthe)" },
       { member: "Nurhayati (Aya)" },
       { member: "Rinanda Syahputri (Nanda)" },
