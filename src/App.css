@@ -7,13 +7,13 @@
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: #cd0c0d;
+  background-color: teal;
   color: white;
 }
 
 nav a:hover {
   text-decoration: none;
-  color: #800000;
+  color: #cd0c0d;
 }
 
 .nav-links {

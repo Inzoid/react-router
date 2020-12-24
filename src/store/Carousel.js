@@ -19,20 +19,24 @@ const TEAM_J = [
 
 const TEAM_K = [
   {
-    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/23/04c94de7-f5d4-4905-990f-30efc3f39386-1606103416554-7032e3ca635d8b402d6c01841c0dbd81.jpg',
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/30/b08deda8-4883-4898-9139-6a4970f8d59f-1606712388097-56011bf87726e8e2a809c7daa2bb7128.jpeg',
     key: '1',
   },
   {
-    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/23/7869cf4f-3135-4ee8-aed0-6a7b09fed5fd-1606103426767-4b546d065eac0146348ae164c189861e.jpg',
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/23/04c94de7-f5d4-4905-990f-30efc3f39386-1606103416554-7032e3ca635d8b402d6c01841c0dbd81.jpg',
     key: '2',
   },
   {
-    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/23/a451cbc7-cf91-4e1d-8d4a-4d08573cd23d-1606103437904-af0736b52d048aece722549c6dc6d14e.jpg',
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/23/7869cf4f-3135-4ee8-aed0-6a7b09fed5fd-1606103426767-4b546d065eac0146348ae164c189861e.jpg',
     key: '3',
   },
   {
-    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/23/65d62f19-07aa-473d-befe-729577cef2ee-1606103448141-306a837914547df54ce812622f8b1856.jpg',
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/23/a451cbc7-cf91-4e1d-8d4a-4d08573cd23d-1606103437904-af0736b52d048aece722549c6dc6d14e.jpg',
     key: '4',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/23/65d62f19-07aa-473d-befe-729577cef2ee-1606103448141-306a837914547df54ce812622f8b1856.jpg',
+    key: '5',
   },
 ];
 

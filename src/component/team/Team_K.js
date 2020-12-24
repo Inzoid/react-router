@@ -18,7 +18,7 @@ function TeamK() {
     return (
       Schedules.TEAM_K.DECEMBER.map((item, idx) => (
         <CardText key={idx}>
-          Ramune no Nomikata <b>{item.day} {item.date} {item.time}</b>
+          Ramune no Nomikata <b>{item.day}, {item.date} {item.time}</b>
         </CardText>
       ))
     )
@@ -44,7 +44,7 @@ function TeamK() {
     <Container>
       <Row>
         <Col>
-          <h3>Team KIII 5th Stage (Ramune no Nomikata / Ramune no Nomikata)</h3>
+          <h3>Team KIII 5th Stage (Ramune no Nomikata / Cara Meminum Ramune)</h3>
         </Col>
       </Row>
       <Row>

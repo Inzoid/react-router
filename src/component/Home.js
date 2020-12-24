@@ -15,7 +15,9 @@ function Home() {
       <Row className="App">
         {Team && Team.slice(0, 3).map((item, idx) => (
           <Col sm="4" key={idx} style={{marginBottom: '15px'}}>
-            <CardImg src={item.img} alt={item.name} />
+            <Link to={item.route}>
+              <CardImg src={item.img} alt={item.name} />
+            </Link>
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>
@@ -33,7 +35,9 @@ function Home() {
       <Row className="App">
         {Team && Team.slice(3, 4).map((item, idx) => (
           <Col key={idx}>
-            <CardImg src={item.img} alt={item.name} />
+            <Link to={item.route}>
+              <CardImg src={item.img} alt={item.name} />
+            </Link>
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>

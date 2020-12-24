@@ -18,7 +18,7 @@ function TeamJ() {
     return (
       Schedules.TEAM_J.DECEMBER.map((item, idx) => (
         <CardText key={idx}>
-          Fajar Sang Idola <b>{item.day} {item.date} {item.time}</b>
+          Idol No Yoake <b>{item.day}, {item.date} {item.time}</b>
         </CardText>
       ))
     )
