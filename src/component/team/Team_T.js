@@ -8,11 +8,13 @@ function TeamJ() {
   return(
     <Container>
       <Row>
-        <h1>Team T</h1>
+        <Col>
+          <h1>Team T</h1>
+        </Col>
       </Row>
       <Row>
         {Team && Team.slice(2,3).map((item, idx) => (
-          <Col key={idx} className="App">
+          <Col  sm="6" key={idx} className="App">
             <CardImg src={item.img} alt={item.name} />
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>
@@ -24,7 +26,7 @@ function TeamJ() {
           </Col>
         ))}
         {Team && Team.slice(2,3).map((item, idx) => (
-          <Col key={idx} className="App">
+          <Col className="mt-3" key={idx} className="App">
             <CardImg src={item.img} alt={item.name} />
             <Card body inverse color={item.color}>
               <CardTitle tag="h5">{item.name}</CardTitle>

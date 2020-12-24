@@ -15,11 +15,11 @@ function App() {
       <Nav />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/schedule" component={Schedule} />
         <Route path="/team-j" component={Team_J} />
         <Route path="/team-k" component={Team_K} />
         <Route path="/team-t" component={Team_T} />
+        <Route path="/about" component={About} />
+        <Route path="/all-schedule" component={Schedule} />
       </Switch>
     </Router>
   );

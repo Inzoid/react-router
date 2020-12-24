@@ -11,7 +11,7 @@ import Members from '../../store/Member';
 import Schedules from '../../store/Schedule';
 import Carousels from '../../store/Carousel';
 
-function TeamJ() {
+function TeamJ(props) {
   const [section, setSection] = useState('description');
 
   const Schedule = () => {
@@ -50,25 +50,26 @@ function TeamJ() {
       <Row>
         {section == 'description' ? (
           Team.slice(0, 1).map((item, idx) => (
-            <Col sm="6" key={idx}>
+            <Col className="mb-3" sm="6" key={idx}>
               <UncontrolledCarousel items={Carousels.TEAM_J} />
               <Card body inverse color={item.color}>
                 <CardTitle tag="h2">{item.name}</CardTitle>
                 <CardText>{item.desc}</CardText>
                 <CardTitle tag="h4">
-                  <b>IDR 25.000</b> ( Tersedia di Tiket.com )
+                  <b>IDR 25.000</b> (On Tiket.com)
                 </CardTitle>
                 <TicketButton />
                 <Button color="success" onClick={() => setSection('member')}>
                   Lihat Line Up Member
                 </Button>
+                {props.children}
               </Card>
             </Col>
           ))
         ) : (
           <Col sm="6">
             <Card body inverse color="danger">
-              <CardTitle style={{ marginTop: '15px' }} tag="h4">
+              <CardTitle tag="h4">
                 Daftar Member Team J yang akan tampil
               </CardTitle>
                 {Members[0].Team_J.map((item, idx) => (
@@ -81,15 +82,17 @@ function TeamJ() {
           </Col>
         )}
 
-        <Col>
-          <Card body outline color="danger">
-            <CardText>
-              <CardTitle tag="h5">Jadwal Theater Team J Minggu ini </CardTitle>
-              <Schedule />
-              <Description />
-            </CardText>
-          </Card>
-        </Col>
+        {window.location.pathname !== '/all-schedule' &&
+          <Col>
+            <Card body outline color="danger">
+              <CardText>
+                <CardTitle tag="h5">Jadwal Team J Minggu ini </CardTitle>
+                <Schedule />
+                <Description />
+              </CardText>
+            </Card>
+          </Col>
+        }
       </Row>
     </Container>
   );

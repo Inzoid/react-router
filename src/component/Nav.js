@@ -9,7 +9,7 @@ const Navigation = (props) => {
 
   return (
     <Navbar className="nav" dark expand="md">
-      <NavbarBrand href="/">
+      <NavbarBrand>
         <Link className="menu" to="/"><b>JKT48 Theater Schedule</b></Link>
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
@@ -26,6 +26,9 @@ const Navigation = (props) => {
           </NavItem>
           <NavItem>
             <Link className="menu" to="/academy-class-a">Academy Class A</Link>
+          </NavItem>
+          <NavItem>
+            <Link className="menu" to="/all-schedule">All Schedule</Link>
           </NavItem>
           <NavItem>
             <Link className="menu" to="/about">About</Link>
