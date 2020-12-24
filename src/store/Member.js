@@ -19,6 +19,26 @@ const Member = [
       { member: "Rona Anggreani" },
       { member: "Sania Julia Montolalu" },
     ]
+  },
+  {
+    Team_K: [
+      { member: "Aninditha Rahma Cahyadi (Anin) (Team J & Team T)" },
+      { member: "Angelina Christy (Christy)" },
+      { member: "Beby Chaesara Anadila (Beby) (Announced Graduation)" },
+      { member: "Fidly Immanda Azzahra (Fia)" },
+      { member: "Gita Sekar Andarini (Gita)" },
+      { member: "Helisma Putri (Eli)" },
+      { member: "Jinan Safa Safira (Jinan)" },
+      { member: "Kandiya Rafa Maulidita (Indy)" },
+      { member: "Maria Genoveva Natalia Desy Purnamasari Gunawan (Desy) (Announced Graduation)" },
+      { member: "Mutiara Azzahra (Muthe)" },
+      { member: "Nurhayati (Aya)" },
+      { member: "Rinanda Syahputri (Nanda)" },
+      { member: "Shani Indira Natio (Shani)" },
+      { member: "Shania Gracia (Gracia)" },
+      { member: "Yessica Tamara (Chika)" },
+      { member: "Zahra Nur (Ara)" }
+    ]
   }
 ];
 
