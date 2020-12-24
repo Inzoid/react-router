@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import PulseLoader from "react-spinners/PulseLoader";
 import { Row, Col, Button, CardTitle, CardText } from 'reactstrap';
 
 //store
@@ -105,16 +106,31 @@ function Description() {
   };
 
   const [menuType, setMenuType] = useState('setlist');
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 800);
+  }, [menuType])
 
   return (
     <CardText>
       <Row>
         <Col>
-          <Button color="danger" onClick={handleClickMember}>
-            Member
+          <Button 
+            className="setlist-btn" 
+            onClick={handleClickSetlist}
+            style={{backgroundColor: 'teal'}}
+          >
+            Lagu Setlist
           </Button>
-          <Button className="setlist-btn" onClick={handleClickSetlist}>
-            Lagu
+          <Button 
+            color="danger" 
+            onClick={handleClickMember}
+          >
+            Member
           </Button>
           <Button
             color="info"
@@ -125,7 +141,14 @@ function Description() {
           </Button>
         </Col>
       </Row>
-      
+      {loading && 
+        <PulseLoader
+          size={12}
+          color={"teal"}
+          loading={loading}
+          style={{alignItem: 'center'}}
+        />
+      }
       {menuType === 'setlist' ? (
         <div>
           <CardTitle tag="h5">

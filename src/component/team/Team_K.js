@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 //component
 import '../../component/team/Team.css';
+import Loading from '../menu/Loading';
 import Description from '../../component/menu/Description';
 import { Container, Row, Col, Card, CardImg, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
 
@@ -13,12 +14,20 @@ import Carousels from '../../store/Carousel';
 
 function TeamK(props) {
   const [section, setSection] = useState('description');
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 400);
+  }, [section])
 
   const Schedule = () => {
     return (
       Schedules.TEAM_K.DECEMBER.map((item, idx) => (
         <CardText key={idx}>
-          Ramune no Nomikata <b>{item.day}, {item.date} {item.time}</b>
+          Ramune no Nomikata <b>({item.day}, {item.date} {item.time})</b>
         </CardText>
       ))
     )
@@ -59,6 +68,7 @@ function TeamK(props) {
                   <b>IDR 25.000</b> (On Tiket.com)
                 </CardTitle>
                 <TicketButton />
+                {loading && <Loading />}
                 <Button color="success" onClick={() => setSection('member')}>
                   Lihat Line Up Member
                 </Button>
@@ -67,7 +77,7 @@ function TeamK(props) {
             </Col>
           ))
         ) : (
-          <Col sm="6">
+          <Col className="mb-3" sm="6">
             <Card body inverse color="warning">
               <CardTitle style={{ marginTop: '15px' }} tag="h4">
                 Daftar Member Team KIII yang akan tampil
@@ -75,6 +85,7 @@ function TeamK(props) {
               {Members[1].Team_K.map((item, idx) => (
                 <CardText key={idx}>{item.member}</CardText>
               ))}
+              {loading && <Loading />}
               <Button color="success" onClick={() => setSection('description')}>
                 Lihat Description
             </Button>
