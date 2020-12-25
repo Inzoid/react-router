@@ -6,92 +6,74 @@ import { Row, Col, Button, CardTitle, CardText } from 'reactstrap';
 import Setlists from '../../store/Setlist';
 import Members from '../../store/Member';
 
-// Member description
-const Member = () => {
-  let path = window.location.pathname
-  const Team_J = Members[0].Team_J;
-  const Team_K = Members[1].Team_K;
-
-  return (
-    path === '/team-j' ? (
-      <div>
-        <CardTitle tag="h5">
-          Daftar Member Team J yang akan tampil
-        </CardTitle>
-        {Team_J.map((item, idx) => (
-          <CardText key={idx}>
-            {item.member}
-          </CardText>
-        ))}
-      </div>
-    ) : path === '/team-k' ? (
-      <div>
-        <CardTitle tag="h5">
-          Daftar Member Team KIII yang akan tampil
-        </CardTitle>
-        {Team_K.map((item, idx) => (
-          <CardText key={idx}>
-            {item.member}
-          </CardText>
-        ))}
-      </div>
-    ) : (
-      'null'
-    )
-  )
-}
-
-// Setlist description
-const Setlist = () => {
-  let path = window.location.pathname
-  const Team_J = Setlists[0].Team_J;
-  const Team_K = Setlists[1].Team_K;
-
-  return (
-    path === '/team-j' ? (
-      Team_J.map((item, idx) => (
-        <CardText key={idx}>
-          <b>{item.id}</b> {item.song}
-        </CardText>
-      ))
-    ) : path === '/team-k' ? (
-      Team_K.map((item, idx) => (
-        <CardText key={idx}>
-          <b>{item.id}</b> {item.song}
-        </CardText>
-      ))
-    ) : (
-      'null'
-    )
-  )
-}
-
-// Encore Description
-const Encore = () => {
-  let path = window.location.pathname
-  const Team_J = Setlists[0].Team_J.slice(14, 17);
-  const Team_K = Setlists[1].Team_K.slice(13, 17);
-
-  return (
-    path === '/team-j' ? (
-      Team_J.map((item, idx) => (
-        <CardText key={idx}>
-          <b>{item.id}</b> {item.song}
-        </CardText>
-      ))
-    ) : path === '/team-k' ? (
-      Team_K.map((item, idx) => (
-        <CardText key={idx}>
-          <b>{item.id}</b> {item.song}
-        </CardText>
-      ))
-    ) : (
-      'null'
-    )
-  )
-}
-
 function Description() {
+  let team = '';
+  let member = '';
+  let setlist = '';
+  let encore = '';
+  let path = window.location.pathname;
+
+  const Member_J = Members[0].Team_J;
+  const Member_K = Members[1].Team_K;
+
+  const Setlist_J = Setlists[0].Team_J;
+  const Setlist_K = Setlists[1].Team_K;
+
+  const Encore_J = Setlists[0].Team_J.slice(14, 17);
+  const Encore_K = Setlists[1].Team_K.slice(13, 17);
+
+  switch(path) {
+    case '/team-j':
+      team = 'J'
+      member = Member_J;
+      setlist = Setlist_J;
+      encore = Encore_J;
+      break
+    case '/team-k':
+      team = 'KII'
+      member = Member_K;
+      setlist = Setlist_K
+      encore = Encore_K;
+      break
+  }
+
+  // Member description
+  const Member = () => {
+    return (
+      <div>
+        <CardTitle tag="h5">
+          Daftar Member Team {team} yang akan tampil
+        </CardTitle>
+        {member.map((item, idx) => (
+          <CardText key={idx}>
+            {item.member}
+          </CardText>
+        ))}
+      </div>
+    )
+  }
+
+  // Setlist description
+  const Setlist = () => {
+    return (
+      setlist.map((item, idx) => (
+        <CardText key={idx}>
+          <b>{item.id}</b> {item.song}
+        </CardText>
+      ))
+    )
+  }
+
+  // Encore Description
+  const Encore = () => {
+    return (
+      encore.map((item, idx) => (
+        <CardText key={idx}>
+          <b>{item.id}</b> {item.song}
+        </CardText>
+      ))
+    )
+  }
 
   const handleClickSetlist = () => {
     setMenuType('setlist');
@@ -102,7 +84,7 @@ function Description() {
   };
 
   const handleClickEncore = () => {
-    setMenuType('Encore');
+    setMenuType('encore');
   };
 
   const [menuType, setMenuType] = useState('setlist');

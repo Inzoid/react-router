@@ -51,11 +51,13 @@ function TeamJ(props) {
 
   return (
     <Container>
-      <Row>
-        <Col>
-          <h3>Team J 5th Stage (Idol No Yoake / Fajar Sang Idola)</h3>
-        </Col>
-      </Row>
+        {window.location.pathname !== '/all-schedule' &&
+          <Row>
+            <Col>
+              <h3>Team J 5th Stage (Idol No Yoake / Fajar Sang Idola)</h3>
+            </Col>
+          </Row>
+        }
       <Row>
         {section == 'description' ? (
           Team.slice(0, 1).map((item, idx) => (
@@ -87,7 +89,7 @@ function TeamJ(props) {
                 ))}
                 {loading && <Loading />}
               <Button color="success" onClick={() => setSection('description')}>
-                Lihat Description
+                Lihat Deskripsi
               </Button>
             </Card>
           </Col>

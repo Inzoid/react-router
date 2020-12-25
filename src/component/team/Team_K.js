@@ -51,11 +51,13 @@ function TeamK(props) {
 
   return (
     <Container>
-      <Row>
-        <Col>
-          <h3>Team KIII 5th Stage (Ramune no Nomikata / Cara Meminum Ramune)</h3>
-        </Col>
-      </Row>
+      {window.location.pathname !== '/all-schedule' &&
+        <Row>
+          <Col>
+            <h3>Team KIII 5th Stage (Ramune no Nomikata / Cara Meminum Ramune)</h3>
+          </Col>
+        </Row>
+      }
       <Row>
         {section == 'description' ? (
           Team.slice(1, 2).map((item, idx) => (
@@ -87,7 +89,7 @@ function TeamK(props) {
               ))}
               {loading && <Loading />}
               <Button color="success" onClick={() => setSection('description')}>
-                Lihat Description
+                Lihat Deskripsi
             </Button>
             </Card>
           </Col>
