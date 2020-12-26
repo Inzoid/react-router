@@ -40,7 +40,31 @@ const TEAM_K = [
   },
 ];
 
+const TEAM_T = [
+  {
+    src: 'https://jkt48.com/images/banner.home.fly-team-t.jpg',
+    key: '1',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/02/c449c693-452a-4108-8291-cdb6950bbd77-1604289185729-2a3fca4e54f5fe1f287f3de13eb3698d.jpg',
+    key: '2',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/02/27f271c4-42f2-4e7f-8f4f-35a97b2b2e66-1604289148340-ea482256585c2604a47cb88395612691.jpg',
+    key: '3',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/02/85bd64ee-1c14-4e67-bded-a0fc6936c29b-1604289202894-eea430498f7a952166530fa95652e5a8.jpg',
+    key: '4',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/02/c449c693-452a-4108-8291-cdb6950bbd77-1604289185729-2a3fca4e54f5fe1f287f3de13eb3698d.jpg',
+    key: '5',
+  },
+];
+
 export default {
   TEAM_J,
-  TEAM_K
+  TEAM_K,
+  TEAM_T,
 }

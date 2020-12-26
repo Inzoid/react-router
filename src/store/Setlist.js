@@ -1,18 +1,18 @@
 const Setlist = [
   {
     Team_J: [
-      { id: "M01.", song: "Idol no Yoake ( Fajar Sang Idola)" },
-      { id: "M02.", song: "Minasan mo go Issho ni ( Bersama-sama Semuanya)" },
-      { id: "M03.", song: "Haru Ichiban ga Fuku Koro ( Angin Musim Semi Pertama)" },
-      { id: "M04.", song: "Kobushi no Seigi ( Kebenaran Tinju Ini)" },
-      { id: "M05.", song: "Zannen Shoujo ( Gadis yang Celaka)" },
-      { id: "M06.", song: "Kuchi Utsushi no Chocolate ( Berikan Coklat dengan Bibir)" },
-      { id: "M07.", song: "Kataomoi no Taikakusen ( Garis Diagonal Cinta Searah)" },
-      { id: "M08.", song: "Tengoku Yarou ( Berandalan di Surga) " },
-      { id: "M09.", song: "Itoshiki Natasha ( Natasha yang Ku Cinta)" },
-      { id: "M10.", song: "Joshikousei wa Yamerarenai ( Tak Bisa Berhenti Jadi Gadis SMA)" },
-      { id: "M11.", song: "Suki to Ieba Yokatta ( Andai Ku Dapat Ungkapkan Cinta)" },
-      { id: "M12.", song: "Sobakasu no Kiss (  Freckles' Kiss)" },
+      { id: "M01.", song: "Idol no Yoake (Fajar Sang Idola)" },
+      { id: "M02.", song: "Minasan mo go Issho ni (Bersama-sama Semuanya)" },
+      { id: "M03.", song: "Haru Ichiban ga Fuku Koro (Angin Musim Semi Pertama)" },
+      { id: "M04.", song: "Kobushi no Seigi (Kebenaran Tinju Ini)" },
+      { id: "M05.", song: "Zannen Shoujo (Gadis yang Celaka)" },
+      { id: "M06.", song: "Kuchi Utsushi no Chocolate (Berikan Coklat dengan Bibir)" },
+      { id: "M07.", song: "Kataomoi no Taikakusen (Garis Diagonal Cinta Searah)" },
+      { id: "M08.", song: "Tengoku Yarou (Berandalan di Surga) " },
+      { id: "M09.", song: "Itoshiki Natasha (Natasha yang Ku Cinta)" },
+      { id: "M10.", song: "Joshikousei wa Yamerarenai (Tak Bisa Berhenti Jadi Gadis SMA)" },
+      { id: "M11.", song: "Suki to Ieba Yokatta (Andai Ku Dapat Ungkapkan Cinta)" },
+      { id: "M12.", song: "Sobakasu no Kiss (Freckles' Kiss)" },
       { id: "M13.", song: "Tanpopo no Kesshin (Keteguhan Hati Dandelion)" },
       { id: "M14.", song: "J Stars" },
       { id: "M15.", song: "Yokosuka Curve (Jalan Berkelok Yokosuka)" },
@@ -24,7 +24,7 @@ const Setlist = [
       { id: "M01.", song: "Kizashi (Pertanda)" },
       { id: "M02.", song: "Koutei no Koinu (Schoolyard Puppy)" },
       { id: "M03.", song: "Disco Hokenshitsu (Disko di UKS)" },
-      { id: "M04.", song: "Omatase Set List (Setlist yang Dinanti)" },
+      { id: "M04.", song: "Omatase Setlist (Setlist yang Dinanti)" },
       { id: "M05.", song: "Cross" },
       { id: "M06.", song: "Finland Miracle (Keajaiban Finlandia)" },
       { id: "M07.", song: "Manazashi (Menatapmu Sayonara)" },
@@ -37,6 +37,26 @@ const Setlist = [
       { id: "M14.", song: "Bowling Ganbou (Harapan Bowling)" },
       { id: "M15.", song: "16 iro no Yume Crayon (16 Warna Crayon Mimpi) " },
       { id: "M16.", song: "Ramune no Nomikata (Cara Meminum Ramune)" },
+    ]
+  },
+  {
+    Team_T: [
+      { id: "M01.", song: "Aozora Kataomoi (Langit Biru Cinta Searah)" },
+      { id: "M02.", song: "Soramimi Rock (Salah Dengar Rock)" },
+      { id: "M03.", song: "Gonna Jump" },
+      { id: "M04.", song: "Oogoe Diamond (Teriakan Berlian)" },
+      { id: "M05.", song: "Hatsukoi Dash (Dash Cinta Pertama)" },
+      { id: "M06.", song: "Relax!" },
+      { id: "M07.", song: "Arashi no Yoru ni wa (Pada Malam yang Berbadai)" },
+      { id: "M08.", song: "Glass no I LOVE YOU (Kaca Berbentuk I LOVE YOU)" },
+      { id: "M09.", song: "Migikata (Pundak Kanan)" },
+      { id: "M10.", song: "Suki! Suki! Skip! (Suka! Suka! Skip!)" },
+      { id: "M11.", song: "Hatsukoi Butterfly" },
+      { id: "M12.", song: "Melon Juice" },
+      { id: "M13.", song: "Aozora no Soba ni Ite (Tetaplah Ada di Langit Biru)" },
+      { id: "M14.", song: "Medley (Everyday, Kacuusha, Iiwake Maybe, Kibouteki Refrain)" },
+      { id: "M15",  song: "Namida no See Saw Game (Seesaw Game Penuh Air Mata)" },
+      { id: "M16.", song: "Seishun no Lap Time (Lap Time Masa Remaja)" }
     ]
   }
 ]

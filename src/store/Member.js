@@ -22,6 +22,7 @@ const Member = [
   },
   {
     Team_K: [
+      { member: "Anastasya Narwastu Tety (Tasya)"},
       { member: "Aninditha Rahma Cahyadi (Anin)" },
       { member: "Angelina Christy (Christy)" },
       { member: "Beby Chaesara Anadila (Beby)" },
@@ -30,7 +31,6 @@ const Member = [
       { member: "Helisma Putri (Eli)" },
       { member: "Jinan Safa Safira (Jinan)" },
       { member: "Kandiya Rafa Maulidita (Indy)" },
-      { member: "Maria Genoveva Natalia Desy Purnamasari Gunawan (Desy)" },
       { member: "Mutiara Azzahra (Muthe)" },
       { member: "Nurhayati (Aya)" },
       { member: "Rinanda Syahputri (Nanda)" },
@@ -38,6 +38,27 @@ const Member = [
       { member: "Shania Gracia (Gracia)" },
       { member: "Yessica Tamara (Chika)" },
       { member: "Zahra Nur (Ara)" }
+    ]
+  },
+  {
+    Team_T: [
+      { member: "Amirah Fatin" },
+      { member: "Anindhita Rahma Cahyadi" },
+      { member: "Aurel Mayori" },
+      { member: "Cornelia Vanisa" },
+      { member: "Dhea Angelia" },
+      { member: "Febriola Sinambela" },
+      { member: "Fiony Alveria" },
+      { member: "Flora Shafiq" },
+      { member: "Freya Jayawardana" },
+      { member: "Jessica Chandra" },
+      { member: "Jesslyn Callista" },
+      { member: "Lulu Salsabila" },
+      { member: "Nyimas Ratu Rafa" },
+      { member: "Reva Fidela" },
+      { member: "Tan Zhi Hui Celine (Kapten)" },
+      { member: "Umega Maulana" },
+      { member: "Viona Vadrin" }
     ]
   }
 ];

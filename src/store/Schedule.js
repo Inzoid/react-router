@@ -29,4 +29,20 @@ const TEAM_K = {
   ]
 }
 
-export default { TEAM_J, TEAM_K };
+const TEAM_T = {
+  DECEMBER: [
+    {
+      day: 'Sabtu',
+      date: '26 Desember 2020',
+      time: '12:00 WIB',
+      link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-26-desember',
+      color: 'danger',
+    }
+  ]
+}
+
+export default { 
+  TEAM_J, 
+  TEAM_K, 
+  TEAM_T, 
+};

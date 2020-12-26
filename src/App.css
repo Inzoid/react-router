@@ -13,7 +13,8 @@
 
 nav a:hover {
   text-decoration: none;
-  color: #cd0c0d;
+  color: #074953;
+  opacity: 6.6;
 }
 
 .nav-links {

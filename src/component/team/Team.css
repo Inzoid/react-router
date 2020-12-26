@@ -9,3 +9,18 @@
 .setlist-btn {
   margin-right: 10px;
 }
+
+.schedule {
+  margin-bottom: 15px;
+  margin-top: 15px; 
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.setlist {
+  font-family: 'Segoe UI';
+}
+
+.btn-full {
+  width: 100%;
+}
