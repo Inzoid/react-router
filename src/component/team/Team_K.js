@@ -20,15 +20,23 @@ function TeamK(props) {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 400);
+    }, 800);
   }, [section])
 
   const Schedule = () => {
     return (
       Schedules.TEAM_K.DECEMBER.map((item, idx) => (
-        <CardText key={idx}>
+        <CardText className="schedule" key={idx}>
           Ramune no Nomikata <b>({item.day}, {item.date} {item.time})</b>
         </CardText>
+      ))
+    )
+  }
+
+  const Lineup = () => {
+    return (
+      Members[1].Team_K.map((item, idx) => (
+        <CardText key={idx}>{item.member}</CardText>
       ))
     )
   }
@@ -64,13 +72,13 @@ function TeamK(props) {
             <Col className="mb-3" sm="6" key={idx}>
               <UncontrolledCarousel items={Carousels.TEAM_K} />
               <Card body inverse color={item.color}>
+                {loading && <Loading />}
                 <CardTitle tag="h2">{item.name}</CardTitle>
                 <CardText>{item.desc}</CardText>
                 <CardTitle tag="h4">
                   <b>IDR 25.000</b> (On Tiket.com)
                 </CardTitle>
                 <TicketButton />
-                {loading && <Loading />}
                 <Button color="success" onClick={() => setSection('member')}>
                   Lihat Line Up Member
                 </Button>
@@ -80,24 +88,25 @@ function TeamK(props) {
           ))
         ) : (
           <Col className="mb-3" sm="6">
-            <Card body inverse color="warning">
-              <CardTitle style={{ marginTop: '15px' }} tag="h4">
-                Daftar Member Team KIII yang akan tampil
-            </CardTitle>
-              {Members[1].Team_K.map((item, idx) => (
-                <CardText key={idx}>{item.member}</CardText>
-              ))}
-              {loading && <Loading />}
-              <Button color="success" onClick={() => setSection('description')}>
-                Lihat Deskripsi
-            </Button>
+            <Card body inverse color="info">
+              { loading ? <Loading /> : 
+                <div>
+                  <CardTitle style={{ marginTop: '15px' }} tag="h4">
+                    Daftar Member Team KIII yang akan tampil
+                  </CardTitle>
+                    <Lineup />
+                    <Button color="danger" onClick={() => setSection('description')}>
+                      Lihat Deskripsi
+                  </Button>
+                </div>
+              }
             </Card>
           </Col>
         )}
 
         {window.location.pathname !== '/all-schedule' && 
           <Col>
-            <Card body outline color="warning">
+            <Card body outline color="info">
               <CardText>
                 <CardTitle tag="h5">Jadwal Team KIII Minggu ini </CardTitle>
                 <Schedule />

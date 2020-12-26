@@ -15,12 +15,15 @@ function Description() {
 
   const Member_J = Members[0].Team_J;
   const Member_K = Members[1].Team_K;
+  const Member_T = Members[2].Team_T;
 
   const Setlist_J = Setlists[0].Team_J;
   const Setlist_K = Setlists[1].Team_K;
+  const Setlist_T = Setlists[2].Team_T;
 
-  const Encore_J = Setlists[0].Team_J.slice(14, 17);
+  const Encore_J = Setlists[0].Team_J.slice(13, 17);
   const Encore_K = Setlists[1].Team_K.slice(13, 17);
+  const Encore_T = Setlists[2].Team_T.slice(13, 17);
 
   switch(path) {
     case '/team-j':
@@ -35,6 +38,18 @@ function Description() {
       setlist = Setlist_K
       encore = Encore_K;
       break
+    case '/team-t':
+      team = 'T'
+      member = Member_T;
+      setlist = Setlist_T;
+      encore = Encore_T;
+      break;
+    default: 
+      team = 'J'
+      member = Member_J;
+      setlist = Setlist_J;
+      encore = Encore_J;
+      break
   }
 
   // Member description
@@ -42,7 +57,7 @@ function Description() {
     return (
       <div>
         <CardTitle tag="h5">
-          Daftar Member Team {team} yang akan tampil
+          Daftar member Team {team} yang akan tampil
         </CardTitle>
         {member.map((item, idx) => (
           <CardText key={idx}>
@@ -57,7 +72,7 @@ function Description() {
   const Setlist = () => {
     return (
       setlist.map((item, idx) => (
-        <CardText key={idx}>
+        <CardText className="setlist" key={idx}>
           <b>{item.id}</b> {item.song}
         </CardText>
       ))
@@ -75,6 +90,9 @@ function Description() {
     )
   }
 
+  // Setting Menu
+  const [menuType, setMenuType] = useState('setlist');
+
   const handleClickSetlist = () => {
     setMenuType('setlist');
   };
@@ -87,15 +105,25 @@ function Description() {
     setMenuType('encore');
   };
 
-  const [menuType, setMenuType] = useState('setlist');
+  //Set Loading
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 800);
+    }, 1000);
   }, [menuType])
+
+  const Loading = () => {
+    return (
+      <PulseLoader
+        size={12}
+        color={"teal"}
+        loading={loading}
+      />
+    )
+  }
 
   return (
     <CardText>
@@ -108,41 +136,36 @@ function Description() {
           >
             Lagu Setlist
           </Button>
+          <Button
+            color="info"
+            style={{ marginRight: '7px' }}
+            onClick={handleClickEncore}
+          >
+            Encore
+          </Button>
           <Button 
             color="danger" 
             onClick={handleClickMember}
           >
             Member
           </Button>
-          <Button
-            color="info"
-            style={{ marginLeft: '7px' }}
-            onClick={handleClickEncore}
-          >
-            Encore
-          </Button>
         </Col>
       </Row>
-      {loading && 
-        <PulseLoader
-          size={12}
-          color={"teal"}
-          loading={loading}
-          style={{alignItem: 'center'}}
-        />
-      }
       {menuType === 'setlist' ? (
+        loading ? <Loading /> :
         <div>
           <CardTitle tag="h5">
-            Daftar Lagu Yang akan dibawakan
+            Daftar lagu yang akan dibawakan dalam setlist ini
           </CardTitle>
           <Setlist />
         </div>
       ) : menuType === 'member' ? (
+        loading ? <Loading /> :
         <div>
           <Member />
         </div>
       ) : (
+        loading ? <Loading /> :
         <div>
           <CardTitle style={{ marginTop: '15px' }} tag="h5">
             Daftar Lagu Ankoru

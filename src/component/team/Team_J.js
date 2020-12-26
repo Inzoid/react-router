@@ -20,15 +20,23 @@ function TeamJ(props) {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 400);
+    }, 800);
   }, [section])
 
   const Schedule = () => {
     return (
       Schedules.TEAM_J.DECEMBER.map((item, idx) => (
-        <CardText key={idx}>
+        <CardText className="schedule" key={idx}>
           Idol No Yoake <b>({item.day}, {item.date} {item.time})</b>
         </CardText>
+      ))
+    )
+  }
+
+  const Lineup = () => {
+    return (
+      Members[0].Team_J.map((item, idx) => (
+        <CardText key={idx}>{item.member}</CardText>
       ))
     )
   }
@@ -51,26 +59,26 @@ function TeamJ(props) {
 
   return (
     <Container>
-        {window.location.pathname !== '/all-schedule' &&
-          <Row>
-            <Col>
-              <h3>Team J 5th Stage (Idol No Yoake / Fajar Sang Idola)</h3>
-            </Col>
-          </Row>
-        }
+      {window.location.pathname !== '/all-schedule' &&
+        <Row>
+          <Col>
+            <h3>Team J 5th Stage (Idol No Yoake / Fajar Sang Idola)</h3>
+          </Col>
+        </Row>
+      }
       <Row>
         {section == 'description' ? (
           Team.slice(0, 1).map((item, idx) => (
             <Col className="mb-3" sm="6" key={idx}>
               <UncontrolledCarousel items={Carousels.TEAM_J} />
               <Card body inverse color={item.color}>
+                {loading && <Loading />}
                 <CardTitle tag="h2">{item.name}</CardTitle>
                 <CardText>{item.desc}</CardText>
                 <CardTitle tag="h4">
                   <b>IDR 25.000</b> (On Tiket.com)
                 </CardTitle>
                 <TicketButton />
-                {loading && <Loading />}
                 <Button color="success" onClick={() => setSection('member')}>
                   Lihat Line Up Member
                 </Button>
@@ -80,24 +88,25 @@ function TeamJ(props) {
           ))
         ) : (
           <Col className="mb-3" sm="6">
-            <Card body inverse color="danger">
-              <CardTitle tag="h4">
-                Daftar Member Team J yang akan tampil
-              </CardTitle>
-                {Members[0].Team_J.map((item, idx) => (
-                  <CardText key={idx}>{item.member}</CardText>
-                ))}
-                {loading && <Loading />}
-              <Button color="success" onClick={() => setSection('description')}>
-                Lihat Deskripsi
-              </Button>
+            <Card body inverse color="info">
+              { loading ? <Loading /> : 
+                <div>
+                  <CardTitle tag="h4">
+                    Daftar Member Team J yang akan tampil
+                  </CardTitle>
+                  <Lineup />
+                  <Button className="btn-full" color="danger" onClick={() => setSection('description')}>
+                    Lihat Deskripsi 
+                  </Button> 
+                </div>
+              }
             </Card>
           </Col>
         )}
 
         {window.location.pathname !== '/all-schedule' &&
           <Col>
-            <Card body outline color="danger">
+            <Card body outline color="info">
               <CardText>
                 <CardTitle tag="h5">Jadwal Team J Minggu ini </CardTitle>
                 <Schedule />
