@@ -35,7 +35,19 @@ const TEAM_T = {
       day: 'Sabtu',
       date: '26 Desember 2020',
       time: '12:00 WIB',
-      link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-26-desember',
+      link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-26-desember',
+      color: 'danger',
+    }
+  ]
+}
+
+const ACADEMY = {
+  DECEMBER: [
+    {
+      day: 'Minggu',
+      date: '27 Desember 2020',
+      time: '12:00 WIB',
+      link: 'https://www.tiket.com/to-do/konser-jkt48-pajama-drive-27-desember',
       color: 'danger',
     }
   ]
@@ -45,4 +57,5 @@ export default {
   TEAM_J, 
   TEAM_K, 
   TEAM_T, 
+  ACADEMY,
 };

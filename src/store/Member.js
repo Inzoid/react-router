@@ -60,6 +60,25 @@ const Member = [
       { member: "Umega Maulana" },
       { member: "Viona Vadrin" }
     ]
+  },
+  {
+    Academy: [
+      { member: "Adzana Shaliha (Ashel)" },
+      { member: "Caithlyn Gwyneth (Caithlyn)" },
+      { member: "Chalista Ellysia (Chalista)" },
+      { member: "Christabel Jocelyn (Abel)" },
+      { member: "Cindy Nugroho (Nunu)" },
+      { member: "Febi Komaril (Febi)" },
+      { member: "Febrina Diponegoro (Bri)" },
+      { member: "Gabriella Stevany (Vany)" },
+      { member: "Indah Cahya (Indah)" },
+      { member: "Kathrina Irene (Kathrina)" },
+      { member: "Keisya Ramadhani (Keisya)" },
+      { member: "Marsha Lenathea (Marsha)" },
+      { member: "Nabila Gusmarlia (Nabila)" },
+      { member: "Putri Elzahra (Zahra)" },
+      { member: "Shinta Devi (Shinta)" },
+    ]
   }
 ];
 

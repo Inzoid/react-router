@@ -16,14 +16,17 @@ function Description() {
   const Member_J = Members[0].Team_J;
   const Member_K = Members[1].Team_K;
   const Member_T = Members[2].Team_T;
+  const Member_A = Members[3].Academy;
 
   const Setlist_J = Setlists[0].Team_J;
   const Setlist_K = Setlists[1].Team_K;
   const Setlist_T = Setlists[2].Team_T;
+  const Setlist_A = Setlists[3].Academy;
 
   const Encore_J = Setlists[0].Team_J.slice(13, 17);
   const Encore_K = Setlists[1].Team_K.slice(13, 17);
   const Encore_T = Setlists[2].Team_T.slice(13, 17);
+  const Encore_A = Setlists[3].Academy.slice(13, 17);
 
   switch(path) {
     case '/team-j':
@@ -44,6 +47,12 @@ function Description() {
       setlist = Setlist_T;
       encore = Encore_T;
       break;
+    case '/academy-class-a':
+      team = 'Academy';
+      member = Member_A;
+      setlist = Setlist_A;
+      encore = Encore_A
+      break
     default: 
       team = 'J'
       member = Member_J;

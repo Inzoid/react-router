@@ -58,7 +58,27 @@ const Setlist = [
       { id: "M15",  song: "Namida no See Saw Game (Seesaw Game Penuh Air Mata)" },
       { id: "M16.", song: "Seishun no Lap Time (Lap Time Masa Remaja)" }
     ]
-  }
+  },
+  {
+    Academy: [
+      { id: "M01.", song: "Shonichi (Hari Pertama)"},
+      { id: "M02.", song: "Hissatsu Teleport (Jurus Rahasia Teleport)"},
+      { id: "M03.", song: "Gokigen Naname Na Mermaid (Putri Duyung Yang Sedang Sedih)"},
+      { id: "M04.", song: "Futari Nori No Jitensa (Bersepeda Berdua)"},
+      { id: "M05.", song: "Tensi No Shipo (Ekor Malaikat)"},
+      { id: "M06.", song: "Pajama Drive"},
+      { id: "M07.", song: "Junjou Shugi (Perinsip Kesucian Hati)"},
+      { id: "M08.", song: "Temodemo No Namida (Air Mata Kesendirian)"},
+      { id: "M09.", song: "Kagami No Naka No Jaen De Arc"},
+      { id: "M10.", song: "Two Years Later"},
+      { id: "M11.", song: "Inochi No Tsukai Michi (Cara Menggunakan Hidup)"},
+      { id: "M12.", song: "Kiss Shite Son Shichatta (Rugi Sudah Di Cium)"},
+      { id: "M13.", song: "Boku No sakura (Bunga Sakuraku)"},
+      { id: "M14.", song: "Wasshoi J"},
+      { id: "M15.", song: "Saifu Wa Arashi Ni Yume Wo Miru (Pelaut Yang Melihat Mimpi Di Tengah Badai)"},
+      { id: "M16.", song: "Shiroi Shirt (Baju Putih)"},
+    ]
+  },
 ]
 
 export default Setlist;

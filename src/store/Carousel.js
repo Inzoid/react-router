@@ -63,8 +63,32 @@ const TEAM_T = [
   },
 ];
 
+const ACADEMY = [
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/30/774ed41e-a8a4-4c10-bb97-beba03a46f8a-1606712326433-629bc98aa5836ef7313564fd2c0843c7.jpeg',
+    key: '1',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/10/25/91ae2fc0-359f-4cd4-92a6-a97aaeeaf751-1603628507080-282f52293817025ea45f7a483999bde9.jpg',
+    key: '2',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/10/25/3eb10ff1-2835-4752-835d-751965443578-1603628514658-7cdbcf6d3f61dcd1f4cb3a1848440e98.jpg',
+    key: '3',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/10/25/33a70df3-8b7b-4fb0-bdbe-0f45549c7026-1603628509867-4b66cd9db1c2245c3988fc2b0887f0ee.jpg',
+    key: '4',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/10/25/10dc43b4-ecef-45f0-b900-cff6db618e08-1603628512976-98c2049903e764e0e62a530699ef6b4f.jpg',
+    key: '5',
+  },
+];
+
 export default {
   TEAM_J,
   TEAM_K,
   TEAM_T,
+  ACADEMY,
 }

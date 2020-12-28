@@ -8,6 +8,7 @@ import Schedule from './component/Schedule';
 import Team_J from './component/team/Team_J';
 import Team_K from './component/team/Team_K';
 import Team_T from './component/team/Team_T';
+import Academy from './component/team/Academy';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/team-t" component={Team_T} />
         <Route path="/about" component={About} />
         <Route path="/all-schedule" component={Schedule} />
+        <Route path="/academy-class-a" component={Academy} />
       </Switch>
     </Router>
   );
