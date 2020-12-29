@@ -118,7 +118,7 @@ function CardTicket(props) {
         team.map((item, idx) => (
           <div key={idx}>
             <UncontrolledCarousel items={banner} />
-            <Card body inverse color={item.color}>
+            <Card body inverse color={item.color} className="mb-3">
               {loading && <Loading />}
               <CardTitle tag="h2">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>

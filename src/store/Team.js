@@ -1,3 +1,5 @@
+import Banner from './Carousel';
+
 const Team = [
   {
     name: 'JKT48 TEAM J',
@@ -6,6 +8,7 @@ const Team = [
     color: 'danger',
     button: 'rgb(97 11 160)',
     route: 'team-j',
+    banner: Banner.TEAM_J,
   },
   {
     name: 'JKT48 TEAM KIII',
@@ -14,6 +17,7 @@ const Team = [
     color: 'warning',
     button: 'rgb(58 177 201)',
     route: 'team-k',
+    banner: Banner.TEAM_K,
   },
   {
     name: 'JKT48 TEAM T',
@@ -22,6 +26,7 @@ const Team = [
     color: 'info',
     button: '#194E69',
     route: 'team-t',
+    banner: Banner.TEAM_T,
   },
   {
     name: 'Academy Class A',
@@ -30,6 +35,7 @@ const Team = [
     color: 'primary',
     button: 'rgb(18 28 109)',
     route: 'academy-class-a',
+    banner: Banner.ACADEMY
   },
 ];
 

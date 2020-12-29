@@ -1,11 +1,10 @@
 import React from 'react';
-import './team/Team.css';
-import { Link } from 'react-router-dom';
-import { Row, Col, Container, Button } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Container, Col, Row, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
 
-//component 
-import Team_J from './team/Team_J';
-import Team_K from './team/Team_K';
+import '../App.css';
+import './team/Team.css';
+import Team from '../store/Team';
 
 function Schedule() {
   return (
@@ -14,20 +13,25 @@ function Schedule() {
         <Col>
           <h3 className="title">Semua Jadwal Theater</h3>
         </Col>
-        <Team_J col="sm-4">
-          <Link to="/team-j">
-            <Button className="mt-3" style={{ backgroundColor: "teal", width: '100%' }}>
-              Detail
-            </Button>
-          </Link>
-        </Team_J>
-        <Team_K>
-          <Link to="/team-k">
-            <Button className="mt-3" style={{ backgroundColor: "teal", width: '100%' }}>
-              Detail
-            </Button>
-          </Link>
-        </Team_K>
+      </Row>
+      <Row className="App">
+        {Team.map((item, idx) => (
+          <Col sm="6" key={idx}>
+            <UncontrolledCarousel items={item.banner} />
+            <Card body inverse color={item.color} className="mb-3">
+              <CardTitle tag="h2">{item.name}</CardTitle>
+              <CardText>{item.desc}</CardText>
+              <CardTitle tag="h4">
+                <b>IDR 25.000</b> (On Tiket.com)
+              </CardTitle>
+              <Link to={item.route}>
+                <Button className="btn-full" color="dark" onClick="">
+                  Detail
+                </Button>
+              </Link>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </Container>
   );
