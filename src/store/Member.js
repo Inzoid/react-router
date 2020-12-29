@@ -54,7 +54,6 @@ const Member = [
       { member: "Jessica Chandra" },
       { member: "Jesslyn Callista" },
       { member: "Lulu Salsabila" },
-      { member: "Nyimas Ratu Rafa" },
       { member: "Reva Fidela" },
       { member: "Tan Zhi Hui Celine (Kapten)" },
       { member: "Umega Maulana" },

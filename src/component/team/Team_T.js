@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
 
 //component
-import '../../component/team/Team.css';
+import '../team/Team.css';
 import Loading from '../menu/Loading';
-import Description from '../../component/menu/Description';
-import { Container, Row, Col, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
+import Description from '../menu/Description';
+import Schedule from '../menu/Schedule';
 
 //store
 import Team from '../../store/Team';
@@ -22,16 +23,6 @@ function TeamT(props) {
       setLoading(false)
     }, 800);
   }, [section])
-
-  const Schedule = () => {
-    return (
-      Schedules.TEAM_T.DECEMBER.map((item, idx) => (
-        <CardText className="schedule" key={idx}>
-          Fly Team T <b>({item.day}, {item.date} {item.time})</b>
-        </CardText>
-      ))
-    )
-  }
 
   const Lineup = () => {
     return (
@@ -108,8 +99,8 @@ function TeamT(props) {
             <Card body outline color="info">
               <CardText>
                 <CardTitle tag="h5">Jadwal Team T Minggu ini </CardTitle>
-                <Schedule />
-                <Description />
+                <Schedule setlist="Fly Team T" />
+                <Description team="Team T" />
               </CardText>
             </Card>
           </Col>

@@ -6,8 +6,8 @@ import { Row, Col, Button, CardTitle, CardText } from 'reactstrap';
 import Setlists from '../../store/Setlist';
 import Members from '../../store/Member';
 
-function Description() {
-  let team = '';
+function Description(props) {
+  let team =  props.team ;
   let member = '';
   let setlist = '';
   let encore = '';
@@ -30,25 +30,21 @@ function Description() {
 
   switch(path) {
     case '/team-j':
-      team = 'J'
       member = Member_J;
       setlist = Setlist_J;
       encore = Encore_J;
       break
     case '/team-k':
-      team = 'KII'
       member = Member_K;
       setlist = Setlist_K
       encore = Encore_K;
       break
     case '/team-t':
-      team = 'T'
       member = Member_T;
       setlist = Setlist_T;
       encore = Encore_T;
       break;
     case '/academy-class-a':
-      team = 'Academy';
       member = Member_A;
       setlist = Setlist_A;
       encore = Encore_A
@@ -66,7 +62,7 @@ function Description() {
     return (
       <div>
         <CardTitle tag="h5">
-          Daftar member Team {team} yang akan tampil
+          Daftar member {team} yang akan tampil
         </CardTitle>
         {member.map((item, idx) => (
           <CardText key={idx}>

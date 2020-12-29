@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
 
 //component
-import '../../component/team/Team.css';
+import '../team/Team.css';
 import Loading from '../menu/Loading';
-import Description from '../../component/menu/Description';
-import { Container, Row, Col, Card, CardImg, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
+import Description from '../menu/Description';
+import Schedule from '../menu/Schedule';
 
 //store
-import Team from "../../store/Team";
+import Team from '../../store/Team';
 import Members from '../../store/Member';
 import Schedules from '../../store/Schedule';
 import Carousels from '../../store/Carousel';
@@ -22,16 +23,6 @@ function TeamK(props) {
       setLoading(false)
     }, 800);
   }, [section])
-
-  const Schedule = () => {
-    return (
-      Schedules.TEAM_K.DECEMBER.map((item, idx) => (
-        <CardText className="schedule" key={idx}>
-          Ramune no Nomikata <b>({item.day}, {item.date} {item.time})</b>
-        </CardText>
-      ))
-    )
-  }
 
   const Lineup = () => {
     return (
@@ -95,7 +86,7 @@ function TeamK(props) {
                     Daftar Member Team KIII yang akan tampil
                   </CardTitle>
                     <Lineup />
-                    <Button color="danger" onClick={() => setSection('description')}>
+                    <Button className="btn-full" color="danger" onClick={() => setSection('description')}>
                       Lihat Deskripsi
                   </Button>
                 </div>
@@ -109,8 +100,8 @@ function TeamK(props) {
             <Card body outline color="info">
               <CardText>
                 <CardTitle tag="h5">Jadwal Team KIII Minggu ini </CardTitle>
-                <Schedule />
-                <Description />
+                <Schedule setlist="Ramune no Nomikata" />
+                <Description team="Team KIII" />
               </CardText>
             </Card>
           </Col>
