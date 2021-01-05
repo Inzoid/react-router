@@ -17,7 +17,7 @@ function TeamK() {
       </Row>
       <Row>
         <Col sm="6" className="mb-3">
-          <CardTicket />
+          <CardTicket price="IDR 30.000" />
         </Col>
         
         <Col>
