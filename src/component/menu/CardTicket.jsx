@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
+import {Col, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
 
 //component
 import '../team/Team.css';
@@ -45,12 +45,10 @@ function CardTicket(props) {
   const Banner_T = Carousels.TEAM_T;
   const Banner_A = Carousels.ACADEMY;
 
-  const month = 'JANUARY';
-  const week = 'WEEK_1';
-  const Schedule_J = Schedules.TEAM_J[month][week];
-  const Schedule_K = Schedules.TEAM_K[month][week];
-  const Schedule_T = Schedules.TEAM_T[month][week];
-  const Schedule_A = Schedules.ACADEMY[month][week];
+  const Schedule_J = Schedules.TEAM_J;
+  const Schedule_K = Schedules.TEAM_K;
+  const Schedule_T = Schedules.TEAM_T;
+  const Schedule_A = Schedules.ACADEMY;
 
   switch(path) {
     case '/team-j':
@@ -114,42 +112,47 @@ function CardTicket(props) {
   }
 
   return (
-    <div>
-      {section == 'description' ? (
+    <>
+      {section === 'description' ? (
         team.map((item, idx) => (
-          <div key={idx}>
+          <Col sm="6" key={idx}>
             <UncontrolledCarousel items={banner} />
             <Card body inverse color={item.color} className="mb-3">
-              {loading && <Loading />}
-              <CardTitle tag="h2">{item.name}</CardTitle>
-              <CardText>{item.desc}</CardText>
-              <CardTitle tag="h4">
-                <b>{props.price}</b> (On Tiket.com)
-              </CardTitle>
-              <TicketButton />
-              <Button color="success" onClick={() => setSection('member')}>
-                Lihat Line Up Member
-              </Button>
+              { loading ? <Loading /> :
+                <>
+                  <CardTitle tag="h2">{item.name}</CardTitle>
+                  <CardText>{item.desc}</CardText>
+                  <CardTitle tag="h4">
+                    <b>{props.price}</b> (On Tiket.com)
+                  </CardTitle>
+                  <TicketButton />
+                  <Button color="success" onClick={() => setSection('member')}>
+                    Lihat Line Up Member
+                  </Button>
+                </>
+              }
               {props.children}
             </Card>
-          </div>
+          </Col>
         ))
       ) : (
-        <Card body inverse color="info">
-          { loading ? <Loading /> :
-            <div>
-              <CardTitle tag="h4">
-                Daftar Member Team {name} yang akan tampil
-              </CardTitle>
-              <Lineup />
-              <Button className="btn-full" color="danger" onClick={() => setSection('description')}>
-                Lihat Deskripsi
-              </Button>
-            </div>
-          }
-        </Card>
+        <Col className="mb-3" sm="6">
+          <Card body inverse color="info">
+            { loading ? <Loading /> :
+              <>
+                <CardTitle tag="h4">
+                  Daftar Member Team {name} yang akan tampil
+                </CardTitle>
+                <Lineup />
+                <Button className="btn-full" color="danger" onClick={() => setSection('description')}>
+                  Lihat Deskripsi
+                </Button>
+              </>
+            }
+          </Card>
+        </Col>
       )}
-    </div>
+    </>
   )
 }
 

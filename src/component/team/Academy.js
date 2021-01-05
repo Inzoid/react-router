@@ -16,10 +16,8 @@ function Academy() {
         </Col>
       </Row>
       <Row>
-        <Col sm="6" className="mb-3">
-          <CardTicket price="IDR 25.000" />
-        </Col>
-
+        <CardTicket price="IDR 25.000" />
+        
         <Col>
           <Card body outline color="info">
             <CardText>

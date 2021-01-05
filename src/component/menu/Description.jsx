@@ -60,7 +60,7 @@ function Description(props) {
   // Member description
   const Member = () => {
     return (
-      <div>
+      <>
         <CardTitle tag="h5">
           Daftar member {team} yang akan tampil
         </CardTitle>
@@ -69,7 +69,7 @@ function Description(props) {
             {item.member}
           </CardText>
         ))}
-      </div>
+      </>
     )
   }
 
@@ -158,25 +158,25 @@ function Description(props) {
       </Row>
       {menuType === 'setlist' ? (
         loading ? <Loading /> :
-        <div>
+        <>
           <CardTitle tag="h5">
             Daftar lagu yang akan dibawakan dalam setlist ini
           </CardTitle>
           <Setlist />
-        </div>
+        </>
       ) : menuType === 'member' ? (
         loading ? <Loading /> :
-        <div>
+        <>
           <Member />
-        </div>
+        </>
       ) : (
         loading ? <Loading /> :
-        <div>
+        <>
           <CardTitle style={{ marginTop: '15px' }} tag="h5">
             Daftar Lagu Ankoru
           </CardTitle>
           <Encore />
-        </div>
+        </>
       )}
     </CardText>
   )

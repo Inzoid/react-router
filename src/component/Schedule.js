@@ -15,7 +15,24 @@ function Schedule() {
         </Col>
       </Row>
       <Row className="App">
-        {Team.map((item, idx) => (
+        {Team.slice(0,3).map((item, idx) => (
+          <Col sm="6" key={idx}>
+            <UncontrolledCarousel items={item.banner} />
+            <Card body inverse color={item.color} className="mb-3">
+              <CardTitle tag="h2">{item.name}</CardTitle>
+              <CardText>{item.desc}</CardText>
+              <CardTitle tag="h4">
+                <b>IDR 30.000</b> (On Tiket.com)
+              </CardTitle>
+              <Link to={item.route}>
+                <Button className="btn-full" color="dark" onClick="">
+                  Detail
+                </Button>
+              </Link>
+            </Card>
+          </Col>
+        ))}
+        {Team.slice(3,4).map((item, idx) => (
           <Col sm="6" key={idx}>
             <UncontrolledCarousel items={item.banner} />
             <Card body inverse color={item.color} className="mb-3">

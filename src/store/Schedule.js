@@ -1,4 +1,4 @@
-const TEAM_J = {
+const J = {
   JANUARY: {
     WEEK_1: [
       {
@@ -21,7 +21,7 @@ const TEAM_J = {
   }
 }
 
-const TEAM_K = {
+const K = {
   JANUARY: {
     WEEK_1: [
       {
@@ -44,7 +44,7 @@ const TEAM_K = {
   }
 }
 
-const TEAM_T = {
+const T = {
   JANUARY: {
     WEEK_1: [
       {
@@ -67,7 +67,7 @@ const TEAM_T = {
   }
 }
 
-const ACADEMY = {
+const A = {
   JANUARY: {
     WEEK_1: [
       {
@@ -81,6 +81,14 @@ const ACADEMY = {
     ],
   }
 }
+
+const month = 'JANUARY';
+const week = 'WEEK_1';
+
+const TEAM_J = J[month][week];
+const TEAM_K = K[month][week];
+const TEAM_T = T[month][week];
+const ACADEMY = A[month][week];
 
 export default { 
   TEAM_J, 
