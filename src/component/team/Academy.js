@@ -17,7 +17,7 @@ function Academy() {
       </Row>
       <Row>
         <Col sm="6" className="mb-3">
-          <CardTicket />
+          <CardTicket price="IDR 25.000" />
         </Col>
 
         <Col>
