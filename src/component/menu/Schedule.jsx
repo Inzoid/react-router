@@ -3,15 +3,16 @@ import { CardText } from 'reactstrap';
 import Schedules from '../../store/Schedule';
 
 export default function Schedule(props) {
-  let team = ''
-  const month = 'DECEMBER';
+  let team = '';
   const setlist = props.setlist;
   const path = window.location.pathname;
-
-  const J = Schedules.TEAM_J[month];
-  const K = Schedules.TEAM_K[month];
-  const T = Schedules.TEAM_T[month];
-  const A = Schedules.ACADEMY[month];
+  
+  const month = 'JANUARY';
+  const week = 'WEEK_1';
+  const J = Schedules.TEAM_J[month][week];
+  const K = Schedules.TEAM_K[month][week];
+  const T = Schedules.TEAM_T[month][week];
+  const A = Schedules.ACADEMY[month][week];
 
   switch(path) {
     case '/team-j':
@@ -34,7 +35,7 @@ export default function Schedule(props) {
   return (
     team.map((item, idx) => (
       <CardText className="schedule" key={idx}>
-       {setlist} <b>({item.day}, {item.date} {item.time})</b>
+       {setlist} <b>({item.day}, {item.date} {item.time})({item.info})</b> 
       </CardText>
     ))
   )

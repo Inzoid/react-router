@@ -1,56 +1,85 @@
 const TEAM_J = {
-  DECEMBER: [
-    {
-      day: 'Rabu',
-      date: '23 Desember 2020',
-      time: '19:00 WIB',
-      link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-23-desember',
-      color: 'info',
-    },
-    {
-      day: 'Minggu',
-      date: '27 Desember 2020',
-      time: '16:00 WIB',
-      link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-27-desember',
-      color: 'primary',
-    },
-  ]
+  JANUARY: {
+    WEEK_1: [
+      {
+        day: 'Kamis',
+        date: '7 Januari 2021',
+        time: '19:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-7-januari',
+        color: 'info',
+        info: 'Show 1',
+      },
+      {
+        day: 'Sabtu',
+        date: '9 Januari 2021',
+        time: '14:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-9-januari',
+        color: 'primary',
+        info: 'Show 1',
+      }
+    ]
+  }
 }
 
 const TEAM_K = {
-  DECEMBER: [
-    {
-      day: 'Sabtu',
-      date: '26 Desember 2020',
-      time: '16:00 WIB',
-      link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-26-desember',
-      color: 'info',
-    }
-  ]
+  JANUARY: {
+    WEEK_1: [
+      {
+        day: 'Rabu',
+        date: '6 Januari 2021',
+        time: '19:00 WIB',
+        link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-6-januari',
+        color: 'info',
+        info: 'Show 1',
+      },
+      {
+        day: 'Minggu',
+        date: '10 Januari 2021',
+        time: '14:00 WIB',
+        link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-10-januari',
+        color: 'primary',
+        info: 'Show 1',
+      }
+    ]
+  }
 }
 
 const TEAM_T = {
-  DECEMBER: [
-    {
-      day: 'Sabtu',
-      date: '26 Desember 2020',
-      time: '12:00 WIB',
-      link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-26-desember',
-      color: 'danger',
-    }
-  ]
+  JANUARY: {
+    WEEK_1: [
+      {
+        day: 'Jumat',
+        date: '8 Januari 2021',
+        time: '19:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-8-januari',
+        color: 'danger',
+        info: 'Show 1',
+      },
+      {
+        day: 'Minggu',
+        date: '10 Januari 2021',
+        time: '19:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-10-januari',
+        color: 'primary',
+        info: 'Show 2',
+      }
+    ]
+  }
 }
 
 const ACADEMY = {
-  DECEMBER: [
-    {
-      day: 'Minggu',
-      date: '27 Desember 2020',
-      time: '12:00 WIB',
-      link: 'https://www.tiket.com/to-do/konser-jkt48-pajama-drive-27-desember',
-      color: 'danger',
-    }
-  ]
+  JANUARY: {
+    WEEK_1: [
+      {
+        day: 'Minggu',
+        date: '9 Januari 2021',
+        time: '19:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-pajama-drive-9-januari',
+        color: 'danger',
+        info: 'Show 2'
+      }
+    ],
+  }
 }
 
 export default { 

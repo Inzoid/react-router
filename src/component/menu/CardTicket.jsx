@@ -27,7 +27,6 @@ function CardTicket(props) {
   let member = '';
   let schedule = '';
   let banner = '';
-  const month = 'DECEMBER';
   let path = window.location.pathname;
 
   const All = Team;
@@ -46,10 +45,12 @@ function CardTicket(props) {
   const Banner_T = Carousels.TEAM_T;
   const Banner_A = Carousels.ACADEMY;
 
-  const Schedule_J = Schedules.TEAM_J[month];
-  const Schedule_K = Schedules.TEAM_K[month];
-  const Schedule_T = Schedules.TEAM_T[month];
-  const Schedule_A = Schedules.ACADEMY[month];
+  const month = 'JANUARY';
+  const week = 'WEEK_1';
+  const Schedule_J = Schedules.TEAM_J[month][week];
+  const Schedule_K = Schedules.TEAM_K[month][week];
+  const Schedule_T = Schedules.TEAM_T[month][week];
+  const Schedule_A = Schedules.ACADEMY[month][week];
 
   switch(path) {
     case '/team-j':
@@ -123,7 +124,7 @@ function CardTicket(props) {
               <CardTitle tag="h2">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>
               <CardTitle tag="h4">
-                <b>IDR 25.000</b> (On Tiket.com)
+                <b>{props.price}</b> (On Tiket.com)
               </CardTitle>
               <TicketButton />
               <Button color="success" onClick={() => setSection('member')}>
