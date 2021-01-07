@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Container, Col, Row, Card, CardImg, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
+import { Container, Col, Row, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
 
 import '../App.css';
 import './team/Team.css';
@@ -9,15 +9,13 @@ import Team from '../store/Team';
 function Schedule() {
   return (
     <Container>
-      <Row>
-        <Col>
-          <h3 className="title">Semua Jadwal Theater</h3>
-        </Col>
-      </Row>
+      <Col>
+        <h3 className="title">Semua Jadwal Theater</h3>
+      </Col>
       <Row className="App">
         {Team.slice(4,5).map((item, idx) => (
           <Col sm="12" key={idx}>
-            <CardImg src={item.img} />
+            <UncontrolledCarousel items={item.banner} />
             <Card body inverse color={item.color} className="mb-3">
               <CardTitle tag="h4">{item.name}</CardTitle>
               <CardText>{item.desc}</CardText>

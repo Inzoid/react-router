@@ -1,3 +1,6 @@
+const month = 'JANUARY';
+const week = 'WEEK_1';
+
 const J = {
   JANUARY: {
     WEEK_1: [
@@ -93,9 +96,6 @@ const SHOW_PACKAGES = {
     ]
   }
 }
-
-const month = 'JANUARY';
-const week = 'WEEK_1';
 
 const TEAM_J = J[month][week];
 const TEAM_K = K[month][week];

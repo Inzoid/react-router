@@ -44,6 +44,7 @@ function CardTicket(props) {
   const Banner_K = Carousels.TEAM_K;
   const Banner_T = Carousels.TEAM_T;
   const Banner_A = Carousels.ACADEMY;
+  const Banner_Packages = Carousels.SHOW_PACKAGES;
 
   const Schedule_J = Schedules.TEAM_J;
   const Schedule_K = Schedules.TEAM_K;
@@ -82,8 +83,7 @@ function CardTicket(props) {
       break
     default: 
       team = Package
-      member = Member_J
-      banner = Banner_J
+      banner = Banner_Packages
       schedule = Packages
     break
   }

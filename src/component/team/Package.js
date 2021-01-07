@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card, CardTitle, CardText } from 'reactstrap';
 
 import '../team/Team.css';
-import Schedule from '../menu/ScheduleList';
+import SchedulePackages from '../menu/ScheduleList';
 import CardTicket from '../menu/CardTicket';
 
 function Package() {
@@ -19,7 +19,7 @@ function Package() {
           <Card body outline color="info">
             <CardText>
               <CardTitle tag="h5">Jadwal JKT48 Theater 1st Week January 2021 </CardTitle>
-              <Schedule />
+              <SchedulePackages />
             </CardText>
           </Card>
         </Col>

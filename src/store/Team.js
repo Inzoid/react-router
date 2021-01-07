@@ -44,6 +44,7 @@ const Team = [
     color: 'danger',
     button: 'rgb(97 11 160)',
     route: 'jkt48-theater-7-show-package',
+    banner: Banner.SHOW_PACKAGES
   }
 ];
 
