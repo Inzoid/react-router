@@ -33,8 +33,8 @@ function Home() {
         ))}
       </Row>
       <Row className="App">
-        {Team && Team.slice(3, 4).map((item, idx) => (
-          <Col key={idx}>
+        {Team && Team.slice(3, 5).map((item, idx) => (
+          <Col style={{marginBottom: '15px'}} sm="6" key={idx}>
             <Link to={item.route}>
               <CardImg src={item.img} alt={item.name} />
             </Link>

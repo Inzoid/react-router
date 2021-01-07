@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, CardTitle, CardText } from 'reactstrap';
 //component
 import '../team/Team.css';
 import Description from '../menu/Description';
-import Schedule from '../menu/Schedule';
+import Schedule from '../menu/ScheduleList';
 import CardTicket from '../menu/CardTicket';
 
 function TeamJ() {
