@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CardText, Button } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
 
 import Show from '../../store/ShowPackages';
 import FilterTeam from '../../store/Schedule';
@@ -31,86 +31,120 @@ export default function Packages() {
   const SETLIST_T = 'Fly Team T';
   const SETLIST_A = 'Pajama Drive';
 
+  const Thead = () => (
+    <thead>
+      <tr style={{backgroundColor: '#343a40', color: 'white'}}>
+        <th>Setlist</th>
+        <th>Tanggal</th>
+        <th>Jam</th>
+      </tr>
+    </thead>
+  )
+
   return (
     <>
-      <Button
-        className="setlist-btn"
-        onClick={() => setFilter('team')}
-        style={{ backgroundColor: 'teal', marginBottom: '15px' }}
-      >
-        Filter by Team
-      </Button>
-      <Button
-        className="setlist-btn"
-        onClick={() => setFilter('week')}
-        color="danger"
-        style={{ marginBottom: '15px' }}
-      >
-        Filter by Week
-      </Button>
+      <div>
+        <Button
+          className="setlist-btn"
+          onClick={() => setFilter('team')}
+          style={{ backgroundColor: 'teal', marginBottom: '15px' }}
+        >
+          Filter Team
+        </Button>
+        <Button
+          className="setlist-btn"
+          onClick={() => setFilter('week')}
+          color="danger"
+          style={{ marginBottom: '15px' }}
+        >
+          Filter Week
+        </Button>
+      </div>
 
       {filter === 'week' ? (
         <>
           {loading ? <Loading /> :
-            <>
-              <h4>By Week:</h4>
-              <hr />
+            <Table>
+              <thead>
+                <tr style={{backgroundColor: '#343a40', color: 'white'}}>
+                  <th>Setlist & Team</th>
+                  <th>Tanggal</th>
+                </tr>
+              </thead>
               {Show.map((item, idx) => (
-                <CardText key={idx}>
-                  {item.name} - <b>{item.date}</b>
-                </CardText>
+                <tbody>
+                  <tr key={idx}>
+                    <td >{item.name}</td>
+                    <td>{item.date}</td>
+                  </tr>
+                </tbody>
               ))}
-            </>
+            </Table>
           }
         </>
       ) : (
         <>
           {loading ? <Loading /> :
             <>
-              <h4>By Team:</h4>
+              <h5>Team J :</h5>
+              <Table>
+                <Thead />
+                {FilterTeam.TEAM_J.map((item, idx) => (
+                  <tbody >
+                    <tr key={idx}>
+                      <th scope="row">{SETLIST_J}</th>
+                      <td>{item.day}, {item.date}</td>
+                      <td><b>{item.time}</b></td>
+                    </tr>
+                  </tbody>
+                ))}
+              </Table>
               <hr />
-              <h5>Team J</h5>
-              {FilterTeam.TEAM_J.map((item, idx) => (
-                <CardText key={idx}>
-                  {SETLIST_J}{' '}
-                  <b>
-                    ({item.day}, {item.date} {item.time}) ({item.info})
-                  </b>
-                </CardText>
-              ))}
-              <hr />
-
+              
               <h5>Team KIII</h5>
-              {FilterTeam.TEAM_K.map((item, idx) => (
-                <CardText key={idx}>
-                  {SETLIST_K}{' '}
-                  <b>
-                    ({item.day}, {item.date} {item.time}) ({item.info})
-                  </b>
-                </CardText>
-              ))}
+              <Table>
+                <Thead />
+                {FilterTeam.TEAM_K.map((item, idx) => (
+                  <tbody >
+                    <tr key={idx}>
+                      <th scope="row">{SETLIST_K}</th>
+                      <td>{item.day}, {item.date}</td>
+                      <td><b>{item.time}</b></td>
+                    </tr>
+                  </tbody>
+                ))}
+              </Table>
               <hr />
 
               <h5>Team T</h5>
-              {FilterTeam.TEAM_T.map((item, idx) => (
-                <CardText key={idx}>
-                  {SETLIST_T}{' '}
-                  <b>
-                    ({item.day}, {item.date} {item.time}) ({item.info})
-                  </b>
-                </CardText>
-              ))}
+              <Table>
+                <Thead />
+                {FilterTeam.TEAM_T.map((item, idx) => (
+                  <tbody >
+                    <tr key={idx}>
+                      <th scope="row">{SETLIST_T}</th>
+                      <td>{item.day}, {item.date}</td>
+                      <td><b>{item.time}</b></td>
+                    </tr>
+                  </tbody>
+                ))}
+              </Table>
               <hr />
 
               <h5>Academy Class A</h5>
-              {FilterTeam.ACADEMY.map((item, idx) => (
-                <CardText key={idx}>
-                  {SETLIST_A}{' '}
-                  <b>
-                    ({item.day}, {item.date} {item.time}) ({item.info})
-                  </b>
-                </CardText>
-              ))}
+              <Table>
+                <Thead />
+                {FilterTeam.ACADEMY.map((item, idx) => (
+                  <tbody >
+                    <tr key={idx}>
+                      <th scope="row">{SETLIST_A}</th>
+                      <td>{item.day}, {item.date}</td>
+                      <td><b>{item.time}</b></td>
+                    </tr>
+                  </tbody>
+                ))}
+              </Table>
+              <hr />
             </>
           }
         </>
