@@ -1,29 +1,25 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardTitle, CardText } from 'reactstrap';
 
-//component
 import '../team/Team.css';
-import Description from '../menu/Description';
-import Schedule from '../menu/ScheduleList';
+import SchedulePackages from '../menu/ScheduleList';
 import CardTicket from '../menu/CardTicket';
 
-function Academy() {
+function Package() {
   return (
     <Container>
       <Row>
         <Col>
-          <h3>Academy Class A</h3>
+          <h3>JKT48 Theater Show (7 Show Package) – 1st Week January 2021</h3>
         </Col>
       </Row>
       <Row>
-        <CardTicket price="IDR 25.000" />
-        
+        <CardTicket price="IDR 150.000" />
         <Col>
           <Card body outline color="info">
             <CardText>
-              <CardTitle tag="h5">Jadwal Academy Class A Minggu ini </CardTitle>
-              <Schedule setlist="Pajama Drive" />
-              <Description team="Academy Class A" />
+              <CardTitle tag="h5">Jadwal JKT48 Theater 1st Week January 2021 </CardTitle>
+              <SchedulePackages />
             </CardText>
           </Card>
         </Col>
@@ -32,4 +28,4 @@ function Academy() {
   );
 }
 
-export default Academy;
+export default Package;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardText } from 'reactstrap';
 import Schedules from '../../store/Schedule';
+import Packages from './Packages';
 
 export default function Schedule(props) {
   let team = '';
@@ -21,10 +22,16 @@ export default function Schedule(props) {
   }
 
   return (
-    team.map((item, idx) => (
-      <CardText className="schedule" key={idx}>
-       {setlist} <b>({item.day}, {item.date} {item.time})({item.info})</b> 
+    path === '/jkt48-theater-7-show-package' ? (
+      <CardText className="schedule">
+        <Packages />
       </CardText>
-    ))
+    ) : (
+      team.map((item, idx) => (
+        <CardText className="schedule" key={idx}>
+         {setlist} <b>({item.day}, {item.date} {item.time}) ({item.info})</b> 
+        </CardText>
+      ))
+    )
   )
 }

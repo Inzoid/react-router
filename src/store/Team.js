@@ -37,6 +37,15 @@ const Team = [
     route: 'academy-class-a',
     banner: Banner.ACADEMY
   },
+  {
+    name: 'JKT48 Theater Show (7 Show Package)',
+    desc: 'Dengan membeli paket ini kamu akan mendapatkan tiket untuk menonton seluruh pertunjukkan Theater JKT48 minggu ini, “Fajar Sang Idola”, "Ramune no Nomikata" , "Fly Team T" dan "Pajama Drive"',
+    img: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/09/6a316e89-1a44-4cd2-a7d6-e955d21ec64a-1604884255662-96e876ac72057dcac4e471c186e36f7b.jpg',
+    color: 'danger',
+    button: 'rgb(97 11 160)',
+    route: 'jkt48-theater-7-show-package',
+    banner: Banner.SHOW_PACKAGES
+  }
 ];
 
 export default Team;

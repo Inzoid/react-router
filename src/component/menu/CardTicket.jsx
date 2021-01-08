@@ -29,11 +29,11 @@ function CardTicket(props) {
   let banner = '';
   let path = window.location.pathname;
 
-  const All = Team;
   const Team_J = Team.slice(0, 1);
   const Team_K = Team.slice(1, 2);
   const Team_T = Team.slice(2, 3);
   const Academy = Team.slice(3, 4);
+  const Package = Team.slice(4, 5);
 
   const Member_J = Members[0].Team_J;
   const Member_K = Members[1].Team_K;
@@ -44,11 +44,13 @@ function CardTicket(props) {
   const Banner_K = Carousels.TEAM_K;
   const Banner_T = Carousels.TEAM_T;
   const Banner_A = Carousels.ACADEMY;
+  const Banner_Packages = Carousels.SHOW_PACKAGES;
 
   const Schedule_J = Schedules.TEAM_J;
   const Schedule_K = Schedules.TEAM_K;
   const Schedule_T = Schedules.TEAM_T;
   const Schedule_A = Schedules.ACADEMY;
+  const Packages   = Schedules.PACKAGES;
 
   switch(path) {
     case '/team-j':
@@ -80,10 +82,9 @@ function CardTicket(props) {
       schedule = Schedule_A
       break
     default: 
-      team = All
-      member = Member_J
-      banner = Banner_J
-      schedule = Schedule_J
+      team = Package
+      banner = Banner_Packages
+      schedule = Packages
     break
   }
 
@@ -100,7 +101,7 @@ function CardTicket(props) {
       schedule.map((item, idx) => (
         <Button
           key={idx}
-          style={{ marginBottom: '16px' }}
+          style={{ marginBottom: '8px' }}
           color={item.color}
           href={item.link}
           target="_blank"
@@ -126,9 +127,11 @@ function CardTicket(props) {
                     <b>{props.price}</b> (On Tiket.com)
                   </CardTitle>
                   <TicketButton />
-                  <Button color="success" onClick={() => setSection('member')}>
-                    Lihat Line Up Member
-                  </Button>
+                  {path !== '/jkt48-theater-7-show-package' && 
+                    <Button color="success" onClick={() => setSection('member')}>
+                      Lihat Line Up Member
+                    </Button>
+                  }
                 </>
               }
               {props.children}

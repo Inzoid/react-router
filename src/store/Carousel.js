@@ -86,9 +86,29 @@ const ACADEMY = [
   },
 ];
 
+const SHOW_PACKAGES = [
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/09/6a316e89-1a44-4cd2-a7d6-e955d21ec64a-1604884255662-96e876ac72057dcac4e471c186e36f7b.jpg',
+    key: '1',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/09/b116e8b0-ec97-4c30-8d7d-ea981b00cc2c-1604894650189-29e0e8ce927b2f1bbddad89f0950a288.jpg',
+    key: '2',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/30/b08deda8-4883-4898-9139-6a4970f8d59f-1606712388097-56011bf87726e8e2a809c7daa2bb7128.jpeg',
+    key: '3',
+  },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/02/85bd64ee-1c14-4e67-bded-a0fc6936c29b-1604289202894-eea430498f7a952166530fa95652e5a8.jpg',
+    key: '4',
+  },
+]
+
 export default {
   TEAM_J,
   TEAM_K,
   TEAM_T,
   ACADEMY,
+  SHOW_PACKAGES
 }
