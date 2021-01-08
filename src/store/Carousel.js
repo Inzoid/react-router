@@ -103,6 +103,10 @@ const SHOW_PACKAGES = [
     src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/02/85bd64ee-1c14-4e67-bded-a0fc6936c29b-1604289202894-eea430498f7a952166530fa95652e5a8.jpg',
     key: '4',
   },
+  {
+    src: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2020/11/30/774ed41e-a8a4-4c10-bb97-beba03a46f8a-1606712326433-629bc98aa5836ef7313564fd2c0843c7.jpeg',
+    key: '5',
+  },
 ]
 
 export default {

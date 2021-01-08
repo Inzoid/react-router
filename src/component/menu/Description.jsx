@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PulseLoader from "react-spinners/PulseLoader";
-import { Row, Col, Button, CardTitle, CardText } from 'reactstrap';
+import { Row, Col, Button, CardTitle, CardText, Table } from 'reactstrap';
 
 //store
 import Setlists from '../../store/Setlist';
@@ -61,14 +61,18 @@ function Description(props) {
   const Member = () => {
     return (
       <>
-        <CardTitle tag="h5">
-          Daftar member {team} yang akan tampil
-        </CardTitle>
-        {member.map((item, idx) => (
-          <CardText key={idx}>
-            {item.member}
-          </CardText>
-        ))}
+        <Table>
+          <thead style={tableCss}>
+            <th>Daftar member {team} yang akan tampil</th>
+          </thead>
+          {member.map((item, idx) => (
+            <tbody>
+              <tr>
+                <td key={idx}>{item.member}</td>
+              </tr>
+            </tbody>
+          ))}
+        </Table>
       </>
     )
   }
@@ -76,22 +80,44 @@ function Description(props) {
   // Setlist description
   const Setlist = () => {
     return (
-      setlist.map((item, idx) => (
-        <CardText className="setlist" key={idx}>
-          <b>{item.id}</b> {item.song}
-        </CardText>
-      ))
+      <Table>
+        <thead style={tableCss}>
+          <tr>
+            <th>No</th>
+            <th>Nama Lagu</th>
+          </tr>
+        </thead>
+        {setlist.map((item) => (
+          <tbody>
+            <tr>
+              <th scope="row">{item.id}</th>
+              <td>{item.song}</td>
+            </tr>
+          </tbody>
+        ))}
+      </Table>
     )
   }
 
   // Encore Description
   const Encore = () => {
     return (
-      encore.map((item, idx) => (
-        <CardText key={idx}>
-          <b>{item.id}</b> {item.song}
-        </CardText>
-      ))
+      <Table>
+        <thead style={tableCss}>
+          <tr>
+            <th>No</th>
+            <th>Nama Lagu</th>
+          </tr>
+        </thead>
+        {encore.map((item) => (
+          <tbody>
+            <tr>
+              <th scope="row">{item.id}</th>
+              <td>{item.song}</td>
+            </tr>
+          </tbody>
+        ))}
+      </Table>
     )
   }
 
@@ -130,6 +156,11 @@ function Description(props) {
     )
   }
 
+  const tableCss = {
+    backgroundColor: 'teal', 
+    color: 'white'
+  }
+
   return (
     <CardText>
       <Row>
@@ -160,7 +191,7 @@ function Description(props) {
         loading ? <Loading /> :
         <>
           <CardTitle tag="h5">
-            Daftar lagu yang akan dibawakan dalam setlist ini
+            Daftar lagu yang akan dibawakan:
           </CardTitle>
           <Setlist />
         </>

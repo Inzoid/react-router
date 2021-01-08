@@ -10,7 +10,7 @@ const J = {
         time: '19:00 WIB',
         link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-7-januari',
         color: 'info',
-        info: 'Show 1',
+        info: '1',
       },
       {
         day: 'Sabtu',
@@ -18,7 +18,7 @@ const J = {
         time: '14:00 WIB',
         link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-9-januari',
         color: 'primary',
-        info: 'Show 1',
+        info: '1',
       }
     ]
   }
@@ -33,7 +33,7 @@ const K = {
         time: '19:00 WIB',
         link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-6-januari',
         color: 'info',
-        info: 'Show 1',
+        info: '1',
       },
       {
         day: 'Minggu',
@@ -41,7 +41,7 @@ const K = {
         time: '14:00 WIB',
         link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-10-januari',
         color: 'primary',
-        info: 'Show 1',
+        info: '1',
       }
     ]
   }
@@ -56,7 +56,7 @@ const T = {
         time: '19:00 WIB',
         link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-8-januari',
         color: 'danger',
-        info: 'Show 1',
+        info: '1',
       },
       {
         day: 'Minggu',
@@ -64,7 +64,7 @@ const T = {
         time: '19:00 WIB',
         link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-10-januari',
         color: 'primary',
-        info: 'Show 2',
+        info: '2',
       }
     ]
   }
@@ -79,7 +79,7 @@ const A = {
         time: '19:00 WIB',
         link: 'https://www.tiket.com/to-do/konser-jkt48-pajama-drive-9-januari',
         color: 'danger',
-        info: 'Show 2'
+        info: '2'
       }
     ],
   }
@@ -91,7 +91,7 @@ const SHOW_PACKAGES = {
       {
         date: 'Week 1',
         link: 'https://www.tiket.com/to-do/konser-jkt48-theater-7-show-package-1st-week-januari-2021',
-        color: 'primary',
+        color: 'info',
       }
     ]
   }
