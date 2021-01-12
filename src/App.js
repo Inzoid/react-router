@@ -11,7 +11,6 @@ import Team_T from './component/team/Team_T';
 import Academy from './component/team/Academy';
 import Package from './component/team/Package';
 import Live from './component/Live';
-import Showroom from './component/Showroom';
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
         <Route path="/all-schedule" component={Schedule} />
         <Route path="/academy-class-a" component={Academy} />
         <Route path="/live" component={Live} />
-        <Route path="/showroom" component={Showroom} />
         <Route path="/jkt48-theater-7-show-package" component={Package} />
       </Switch>
     </Router>
