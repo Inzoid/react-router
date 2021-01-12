@@ -31,6 +31,9 @@ const Navigation = (props) => {
             <Link className="menu" to="/all-schedule">All Schedule</Link>
           </NavItem>
           <NavItem>
+            <Link className="menu" to="/live">Live</Link>
+          </NavItem>
+          <NavItem>
             <Link className="menu" to="/about">About</Link>
           </NavItem>
         </Nav>
