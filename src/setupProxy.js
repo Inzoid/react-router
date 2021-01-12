@@ -23,7 +23,7 @@ module.exports = function (app) {
   );
 
   app.use(
-    createProxyMiddleware("/onlives", {
+    createProxyMiddleware("/stage_user_list", {
       target: "https://www.showroom-live.com/api/live",
       changeOrigin: true,
     }),
