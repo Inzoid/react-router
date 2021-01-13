@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Button, Card, Table } from 'reactstrap';
+import { Row, Col, Button, Card, Table, CardHeader, CardText } from 'reactstrap';
 import axios from 'axios';
 
 import './team/Team.css';
 import Stream from '../component/menu/Stream';
-import PulseLoader from "react-spinners/PulseLoader";
+import Loading from "./menu/PulseLoader";
 
 function Live() {
   const showroom = [
     {
-      id: '317750',
-      name: 'Julie',
+      id: '317727',
+      name: 'Zee',
     },
     {
-      id: '318229',
-      name: 'Jeji',
+      id: '318115',
+      name: 'Fia'
+    },
+    {
+      id: '318231',
+      name: 'Jesslyn'
     }
   ]
 
@@ -41,6 +45,7 @@ function Live() {
     axios.get(`/comment_log?room_id=${roomId}`).then(res => {
       const comments = res.data.comment_log
       setComment(comments)
+      setRoomId(roomId)
     })
 
     axios.get(`/stage_user_list?room_id=${roomId}`).then(res => {
@@ -53,15 +58,24 @@ function Live() {
     <>
       <Row>
         <Col>
-        {showroom.map((item, idx) => (
           <Button
-            key={idx}
             color="info"
             style={{ marginLeft: '6px' }}
-            onClick={() => setRoomId(['317724'])}>
-            {item.name}
+            onClick={() => setRoomId('318115')}>
+            Fia
           </Button>
-        ))}
+          <Button
+            color="info"
+            style={{ marginLeft: '6px' }}
+            onClick={() => setRoomId(showroom[1].id)}>
+            Jesslyn
+          </Button>
+          <Button
+            color="info"
+            style={{ marginLeft: '6px' }}
+            onClick={() => setRoomId(showroom[2].id)}>
+            Tety
+          </Button>
         </Col>
       </Row>
     </>
@@ -73,15 +87,57 @@ function Live() {
         <Button
           color="info"
           style={{ marginLeft: '6px'}}
-          onClick={() => setMenu('chat')}>
+          onClick={() => setMenu('chat')}
+        >
           Live Chat
         </Button>
         <Button
           color="info"
-          style={{ marginLeft: '6px', marginRight: '16px' }}
-          onClick={() => setMenu('rank')}>
+          style={{ marginLeft: '6px'}}
+          onClick={() => setMenu('rank')}
+        >
           Rank
         </Button>
+        <Button
+          color="danger"
+          style={{ marginLeft: '6px'}}
+          onClick={() => setMenu('showroom')}
+        >
+          Showroom
+        </Button>
+      </Col>
+    </Row>
+  )
+
+  const UserProfile = () => (
+    <Row style={{ marginLeft: '3px', marginRight: '3px' }}>
+      <Col sm="4">
+        <img width="280" src={profile.image} />
+      </Col>
+      <Col sm="8">
+        <h3>Showroom is Offline</h3>
+        <b>Name:</b> {profile.room_name} <br />
+        <b>Follower:</b> {profile.follower_num} <br />
+        <b>Room Level: </b>{profile.room_level}
+        <CardHeader style={{backgroundColor: '#dc3545', color: 'white', marginTop: '5px'}}>
+          Fans Letter
+        </CardHeader>
+        <Card body outline color="danger">
+          <CardText>
+            { profile.recommend_comment_list != null &&
+              profile.recommend_comment_list.map((item, idx) => (
+                <>
+                  <h5 key={idx}>
+                    <img width="30" style={{marginRight: '5px'}} src={item.user.image} />
+                    {item.user.name}
+                  </h5>
+                  <p>{item.comment} </p>
+                  <hr />
+                </>
+              ))
+            }
+          </CardText>
+        </Card>
       </Col>
     </Row>
   )
@@ -96,45 +152,38 @@ function Live() {
     }, 1000);
   }, [menu])
 
-  const Loading = () => {
-    return (
-      <PulseLoader
-        size={12}
-        color={"teal"}
-        loading={loading}
-      />
-    )
-  }
-
   return (
     <>
       <Row style={{ marginLeft: '3px', marginRight: '3px' }}>
         <Col sm="8" className="mb-3">
-          {url.slice(0,1).map((item, idx) => (
-            <>
-              <Stream key={idx} url ={item.url} />
-            </>
-          ))}
-          {loading ? <Loading /> : 
-            profile && 
-            <h3>
-              {profile.room_url_key}
-              <Button 
-                style={{ marginLeft: '4px'}} 
-                color="danger"
-              >
-                Views: {profile.view_num}
-              </Button>
-            </h3>
+          {url ? 
+            url.slice(0,1).map((item, idx) => (
+              <Stream key={idx} url={item.url} />
+            ))
+          : profile && 
+            <UserProfile />
+          }
+          {loading ? <Loading isLoad={loading} /> : 
+            url != null && profile && 
+            <Col sm="8">
+              <h3>
+                {profile.room_url_key}
+                <Button 
+                  style={{ marginLeft: '4px'}} 
+                  color="danger"
+                >
+                  Views: {profile.view_num}
+                </Button>
+              </h3>
+            </Col>
           }
         </Col>
-
         <Col sm="4">
           <Menu />
           <Card body outline color="info">
             {menu === 'chat' ? (
               comment && comment.length ?
-                comment.slice(0,5).map((item, idx) => (
+                comment.slice(0,10).map((item, idx) => (
                   <>
                     <h5 key={idx}>
                       <img width="30" style={{marginRight: '4px'}} src={item.avatar_url} />
@@ -144,10 +193,10 @@ function Live() {
                     <hr />
                   </>
                 )) : (
-                  <Loading />
+                  <Loading isLoad={loading} />
                 )
-            ) : (
-              loading ? <Loading /> : 
+            ) : menu == 'rank' ? ( 
+              loading ? <Loading isLoad={loading} /> : 
               <Table>
                 {rank.map((item, idx) => (
                   <tbody>
@@ -159,6 +208,8 @@ function Live() {
                   </tbody>
                 ))}
               </Table>
+            ) : (
+              <List />
             )}
           </Card>
         </Col>
