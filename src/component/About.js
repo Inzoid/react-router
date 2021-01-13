@@ -1,16 +1,17 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-
+import { Container, Row, Col, Card, CardTitle, CardText } from 'reactstrap';
 
 function About() {
   return (
     <Container>
       <Row>
         <Col style={{marginTop: '25px'}}>
-          <h1>About</h1>
-          <p>
-            This site is developed by inzoid this website is work on progress
-          </p>
+          <Card body outline color="info">
+          <CardTitle><h3>About</h3></CardTitle>
+          <CardText>
+            This site is developed by <a href="https://twitter.com/inzoid" target="_blank"><b>Inzoid</b></a> this website is work on progress
+          </CardText>
+          </Card>
         </Col>
       </Row>
     </Container>
