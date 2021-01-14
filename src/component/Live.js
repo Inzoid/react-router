@@ -17,7 +17,7 @@ function Live() {
       name: 'Fia'
     },
     {
-      id: '318231',
+      id: '318229',
       name: 'Jesslyn'
     }
   ]
@@ -51,6 +51,7 @@ function Live() {
     axios.get(`/stage_user_list?room_id=${roomId}`).then(res => {
       const userRank = res.data.stage_user_list
       setRank(userRank)
+      console.log(userRank)
     })
   }, [url])
 
@@ -67,14 +68,8 @@ function Live() {
           <Button
             color="info"
             style={{ marginLeft: '6px' }}
-            onClick={() => setRoomId(showroom[1].id)}>
+            onClick={() => setRoomId('318229')}>
             Jesslyn
-          </Button>
-          <Button
-            color="info"
-            style={{ marginLeft: '6px' }}
-            onClick={() => setRoomId(showroom[2].id)}>
-            Tety
           </Button>
         </Col>
       </Row>
@@ -115,13 +110,17 @@ function Live() {
         <img width="280" src={profile.image} />
       </Col>
       <Col sm="8">
-        <h3>Showroom is Offline</h3>
-        <b>Name:</b> {profile.room_name} <br />
-        <b>Follower:</b> {profile.follower_num} <br />
-        <b>Room Level: </b>{profile.room_level}
-        <CardHeader style={{backgroundColor: '#dc3545', color: 'white', marginTop: '5px'}}>
-          Fans Letter
-        </CardHeader>
+        {loading ? <Loading isLoad={loading} /> : 
+          <>
+            <h3>Showroom is Offline</h3>
+            <b>Name:</b> {profile.room_name} <br />
+            <b>Follower:</b> {profile.follower_num} <br />
+            <b>Room Level: </b>{profile.room_level}
+            <CardHeader style={{backgroundColor: '#dc3545', color: 'white', marginTop: '5px'}}>
+              Fans Letter
+            </CardHeader>
+          </>
+        }
         <Card body outline color="danger">
           <CardText>
             { profile.recommend_comment_list != null &&
@@ -180,7 +179,7 @@ function Live() {
         </Col>
         <Col sm="4">
           <Menu />
-          <Card body outline color="info">
+          <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
             {menu === 'chat' ? (
               comment && comment.length ?
                 comment.slice(0,10).map((item, idx) => (
@@ -197,7 +196,7 @@ function Live() {
                 )
             ) : menu == 'rank' ? ( 
               loading ? <Loading isLoad={loading} /> : 
-              <Table>
+              <Table dark>
                 {rank.map((item, idx) => (
                   <tbody>
                     <tr>
