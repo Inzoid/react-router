@@ -33,20 +33,20 @@ function Live() {
       name: 'Lala'
     },
     {
-      id: '318225',
-      name: 'Freya'
+      id: '318118',
+      name: 'Eli'
     },
     {
-      id: '318204',
-      name: 'Muthe'
+      id: '318114',
+      name: 'Beby'
     },
     {
       id: '317726',
       name: 'Yori'
     },
     {
-      id: '318251',
-      name: 'Ara'
+      id: '318207',
+      name: 'Shani'
     },
     {
       id: '317739',
@@ -67,7 +67,7 @@ function Live() {
 
   const [url, setUrl] = useState([]);
   const [menu, setMenu] = useState('showroom')
-  const [roomId, setRoomId] = useState(showroom[0].id);
+  const [roomId, setRoomId] = useState(showroom[1].id);
   const [comment, setComment] = useState([]);
   const [profile, setProfile] = useState();
   const [rank, setRank] = useState([]);
@@ -192,7 +192,7 @@ function Live() {
             <CardHeader style={{ backgroundColor: '#dc3545', color: 'white', marginTop: '15px' }}>
               Biodata
             </CardHeader>
-            <Card style={{ borderTopLeftRadius: '0', borderTopRightRadius: '0' }} body outline color="danger">
+            <Card style={{ borderTopLeftRadius: '0', borderTopRightRadius: '0', color: 'black' }} body outline color="danger">
               <CardText>
                 <b>Name:</b> {profile.room_name} <br />
                 <b>Follower:</b> {profile.follower_num} <br />
@@ -207,7 +207,7 @@ function Live() {
                 Fans Letter
               </CardHeader>
             }
-            <Card style={{ borderTopLeftRadius: '0', borderTopRightRadius: '0' }} body outline color="danger">
+            <Card style={{ borderTopLeftRadius: '0', borderTopRightRadius: '0', color: 'black' }} body outline color="danger">
               <CardText>
                 {profile.recommend_comment_list != null &&
                   profile.recommend_comment_list.map((item, idx) => (
@@ -242,15 +242,22 @@ function Live() {
 
   return (
     <Row style={{ marginLeft: '3px', marginRight: '3px' }}>
+      {theme == darkTable && (
+        document.body.style = 'background: #2c2f33; color: white'
+      )}
       <Col sm="8">
         {url ?
           url.slice(0, 1).map((item, idx) => (
-            <Stream key={idx} url={item.url} />
+            <Row>
+              <Col sm="12">
+                <Stream key={idx} url={item.url} />
+              </Col>
+            </Row>
           )) : profile && (
             loading ? <Loading isLoad={loading} /> :
             <UserProfile />
-          )
-        }
+            )
+          }
         {url != null && profile &&
           <Col sm="8">
             <h4 className="mt-1">
