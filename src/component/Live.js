@@ -71,8 +71,10 @@ function Live() {
   const [comment, setComment] = useState([]);
   const [profile, setProfile] = useState();
   const [rank, setRank] = useState([]);
-  const [theme, setTheme] = useState(lightTable)
+  const [theme, setTheme] = useState(lightTable);
   const [loading, setLoading] = useState(false);
+  const [title, setTitle] = useState('');
+  const [hide, setHide] = useState(false);
 
   useEffect(() => {
     setLoading(true)
@@ -101,6 +103,12 @@ function Live() {
       const userRank = res.data.stage_user_list
       setRank(userRank)
     })
+
+    axios.get(`/telop?room_id=${roomId}`).then(res => {
+      const telop = res.data.telop
+      setTitle(telop)
+    })
+
   }, [url, roomId])
 
   const Showroom = () => (
@@ -136,105 +144,112 @@ function Live() {
   const Menu = () => (
     <Row>
       <Col>
-        {url != null && (
+        {hide === false ?
           <>
+            {url != null && (
+              <>
+                <Button
+                  color="info"
+                  className="showroom-menu mt-1"
+                  onClick={() => setMenu('chat')}
+                >
+                  Live Chat
+                </Button>
+                <Button
+                  color="info"
+                  className="showroom-menu mt-1"
+                  onClick={() => setMenu('rank')}
+                >
+                  Rank
+                </Button>
+              </>
+            )}
             <Button
-              color="info"
-              className="showroom-menu"
-              onClick={() => setMenu('chat')}
+              style={{backgroundColor: 'teal'}}
+              className="showroom-menu mt-1"
+              onClick={() => setMenu('showroom')}
             >
-              Live Chat
+              Showroom
             </Button>
             <Button
-              color="info"
-              className="showroom-menu"
-              onClick={() => setMenu('rank')}
+              className="showroom-menu mt-1"
+              onClick={() => setTheme(darkTable)}
             >
-              Rank
+              Dark
             </Button>
-          </>
-        )}
-        <Button
-          color="danger"
-          className="showroom-menu"
-          onClick={() => setMenu('showroom')}
-        >
-          Showroom
-        </Button>
-        <Button
-          className="showroom-menu"
-          onClick={() => setTheme(darkTable)}
-        >
-          Dark
-        </Button>
-        <Button
-          style={{ marginLeft: '6px' }}
-          onClick={() => setTheme(lightTable)}
-        >
-          Light
-        </Button>
+            <Button
+              className="showroom-menu mt-1"
+              onClick={() => setTheme(lightTable)}
+            >
+              Light
+            </Button>
+            <Button
+              color="danger"
+              className="showroom-menu mt-1"
+              onClick={() => setHide(true)}
+            >
+              Hide Menu
+            </Button>
+          </> :
+          <Button
+            color="info"
+            className="showroom-menu mt-1"
+            onClick={() => setHide(false)}
+          >
+            Show Menu
+          </Button>
+        } 
       </Col>
     </Row>
   )
 
-  // const getDescription = () => {
-  //   let bio = profile.description
-  //   let description = bio.replace('\n', '<br />')
-  //   return bio
-  // }
-
   const UserProfile = () => (
+    profile &&
     <Row style={{ marginLeft: '3px', marginRight: '3px' }}>
-      {profile &&
-        <>
-          <Col sm="4">
-            <img width="280" src={profile.image} />
-            <CardHeader style={{ backgroundColor: '#dc3545', color: 'white', marginTop: '15px' }}>
-              Biodata
-            </CardHeader>
-            <Card style={{ borderTopLeftRadius: '0', borderTopRightRadius: '0', color: 'black' }} body outline color="danger">
-              <CardText>
-                <b>Name:</b> {profile.room_name} <br />
-                <b>Follower:</b> {profile.follower_num} <br />
-                <b>Room Level: </b>{profile.room_level}
-              </CardText>
-            </Card>
-          </Col>
-          <Col sm="8">
-            <h3 className="mt-3">Showroom is Offline</h3>
-            {loading ? <Loading isLoad={loading} /> :
-              <CardHeader style={{ backgroundColor: '#dc3545', color: 'white', marginTop: '15px' }}>
-                Fans Letter
-              </CardHeader>
+      <Col sm="4">
+        <img width="280" src={profile.image} />
+        <CardHeader style={{ backgroundColor: '#dc3545', color: 'white', marginTop: '15px' }}>
+          Biodata
+        </CardHeader>
+        <Card style={{ borderTopLeftRadius: '0', borderTopRightRadius: '0', color: 'black' }} body outline color="danger">
+          <CardText>
+            <b>Name:</b> {profile.room_name} <br />
+            <b>Follower:</b> {profile.follower_num} <br />
+            <b>Room Level: </b>{profile.room_level}
+          </CardText>
+        </Card>
+      </Col>
+      <Col sm="8">
+        <h3 className="mt-3">Showroom is Offline</h3>
+        {loading ? <Loading isLoad={loading} /> :
+          <CardHeader style={{ backgroundColor: '#dc3545', color: 'white', marginTop: '15px' }}>
+            Fans Letter
+          </CardHeader>
+        }
+        <Card style={{ borderTopLeftRadius: '0', borderTopRightRadius: '0', color: 'black' }} body outline color="danger">
+          <CardText>
+            {profile.recommend_comment_list != null &&
+              profile.recommend_comment_list.map((item, idx) => (
+                <div key={idx}>
+                  <h5>
+                    <img width="30" style={{ marginRight: '5px' }} src={item.user.image} />
+                    {item.user.name}
+                  </h5>
+                  <p>{item.comment} </p>
+                  <hr />
+                </div>
+              ))
             }
-            <Card style={{ borderTopLeftRadius: '0', borderTopRightRadius: '0', color: 'black' }} body outline color="danger">
-              <CardText>
-                {profile.recommend_comment_list != null &&
-                  profile.recommend_comment_list.map((item, idx) => (
-                    <div key={idx}>
-                      <h5>
-                        <img width="30" style={{ marginRight: '5px' }} src={item.user.image} />
-                        {item.user.name}
-                      </h5>
-                      <p>{item.comment} </p>
-                      <hr />
-                    </div>
-                  ))
-                }
-              </CardText>
-            </Card>
-          </Col>
-        </>
-      }
+          </CardText>
+        </Card>
+      </Col>
     </Row>
   )
 
   const UserRank = () => (
     rank != null && rank.length ? (
       rank.slice(0, 17).map((item, idx) => (
-      <>
         <img key={idx} alt="rank" width="50" style={{ marginRight: '4px' }} src={item.user.avatar_url} />
-      </> 
     ))) : url != null && (
       <h4>Loading...</h4>
     )
@@ -260,10 +275,11 @@ function Live() {
           }
         {url != null && profile &&
           <Col sm="8">
-            <h4 className="mt-1">
-              {profile.main_name.slice(0, -8)}
+            <h4>
+              <b className="mr-1">{profile.main_name.slice(0, -8)}</b>
+              ({title})
               <Button
-                style={{ marginLeft: '4px', paddingTop: '5px' }}
+                style={{ marginLeft: '4px'}}
                 color="primary"
               >
                 <img src="https://pbs.twimg.com/media/Erx2IE1VQAEqdZD?format=png&name=small"
