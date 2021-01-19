@@ -9,7 +9,7 @@ function About() {
           <Card body outline color="info">
           <CardTitle><h3>About</h3></CardTitle>
           <CardText>
-            This site is developed by <a href="https://twitter.com/inzoid" target="_blank"><b>Inzoid</b></a> this website is work on progress
+            This site is developed by <a href="https://twitter.com/inzoid" target="_blank"><b>Inzoid</b></a> this website is work on progress <br /> Site is developed at 21 December 2020 
           </CardText>
           </Card>
         </Col>

@@ -1,5 +1,5 @@
 const month = 'JANUARY';
-const week = 'WEEK_1';
+const week = 'WEEK_3';
 
 const J = {
   JANUARY: {
@@ -17,6 +17,16 @@ const J = {
         date: '9 Januari 2021',
         time: '14:00 WIB',
         link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-9-januari',
+        color: 'primary',
+        info: '1',
+      }
+    ],
+    WEEK_3: [
+      {
+        day: 'Sabtu',
+        date: '23 Januari 2021',
+        time: '12:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-23-januari',
         color: 'primary',
         info: '1',
       }
@@ -43,6 +53,16 @@ const K = {
         color: 'primary',
         info: '1',
       }
+    ],
+    WEEK_3: [
+      {
+        day: 'Minggu',
+        date: '24 Januari 2021',
+        time: '12:00 WIB',
+        link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-24-januari',
+        color: 'primary',
+        info: '1',
+      }
     ]
   }
 }
@@ -66,6 +86,16 @@ const T = {
         color: 'primary',
         info: '2',
       }
+    ],
+    WEEK_3: [
+      {
+        day: 'Minggu',
+        date: '24 Januari 2021',
+        time: '16:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-24-januari',
+        color: 'primary',
+        info: '1',
+      }
     ]
   }
 }
@@ -82,6 +112,16 @@ const A = {
         info: '2'
       }
     ],
+    WEEK_3: [
+      {
+        day: 'Sabtu',
+        date: '23 Januari 2021',
+        time: '16:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-pajama-drive-23-januari',
+        color: 'danger',
+        info: '1',
+      }
+    ]
   }
 }
 
@@ -90,6 +130,13 @@ const SHOW_PACKAGES = {
     WEEK_1: [
       {
         date: 'Week 1',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-theater-7-show-package-1st-week-januari-2021',
+        color: 'info',
+      }
+    ],
+    WEEK_3: [
+      {
+        date: 'Week 3',
         link: 'https://www.tiket.com/to-do/konser-jkt48-theater-7-show-package-1st-week-januari-2021',
         color: 'info',
       }

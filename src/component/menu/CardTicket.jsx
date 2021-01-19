@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import {Col, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
+import { Col, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
 
-//component
 import '../team/Team.css';
 import Loading from '../menu/Loading';
 
-//store
 import Team from '../../store/Team';
 import Members from '../../store/Member';
 import Carousels from '../../store/Carousel';
@@ -118,7 +116,7 @@ function CardTicket(props) {
         team.map((item, idx) => (
           <Col sm="6" key={idx}>
             <UncontrolledCarousel items={banner} />
-            <Card body inverse color={item.color} className="mb-3">
+            <Card style={{borderTopLeftRadius: '0', borderTopRightRadius: '0',  borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px'}} body inverse color={item.color} className="mb-3">
               { loading ? <Loading /> :
                 <>
                   <CardTitle tag="h2">{item.name}</CardTitle>
