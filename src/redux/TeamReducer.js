@@ -1,5 +1,3 @@
-import { createStore } from "redux";
-
 import Team from '../store/Team';
 import Members from '../store/Member';
 import Banner from '../store/Carousel';
@@ -13,7 +11,7 @@ const initialState = {
   banner: [],
 }
 
-const reducer = (state = initialState , action) => {
+const TeamReducer = (state = initialState , action) => {
   switch (action.type) {
     case 'TEAM_J':
       return {
@@ -33,11 +31,35 @@ const reducer = (state = initialState , action) => {
         schedule: Schedules.TEAM_K,
         banner: Banner.TEAM_K,
       }
+    case 'TEAM_T':
+      return {
+        ...state,
+        name: 'T',
+        team: Team.slice(2, 3),
+        member: Members[2].Team_T,
+        schedule: Schedules.TEAM_T,
+        banner: Banner.TEAM_T,
+      }
+    case 'ACADEMY':
+      return {
+        ...state,
+        name: 'Academy',
+        team: Team.slice(3, 4),
+        member: Members[3].Academy,
+        schedule: Schedules.ACADEMY,
+        banner: Banner.ACADEMY,
+      }
+    case 'PACKAGES':
+      return {
+        ...state,
+        name: 'Packages',
+        team: Team.slice(4, 5),
+        schedule: Schedules.PACKAGES,
+        banner: Banner.SHOW_PACKAGES,
+      }
     default:
       return state
   }
 }
 
-const store = createStore(reducer)
-
-export default store
+export default TeamReducer

@@ -5,15 +5,11 @@ import { Container, Row, Col, Card, CardImg, Button, CardTitle, CardText } from 
 import { useDispatch, useSelector } from 'react-redux';
 
 function Home() {
-  const {dataTeam, name} = useSelector(state => state);
+  const { dataTeam } = useSelector(state => state.HomeReducer);
   const dispatch = useDispatch();
-  console.log('team: ', dataTeam )
-  console.log('name: ', name )
 
   useEffect(() => {
-    setTimeout(() => {
-      dispatch({type: 'TEAM_K'})
-    }, 2000)
+    dispatch({type: 'HOME'})
   })
 
   const imgStyle = {borderBottomLeftRadius: '0', borderBottomRightRadius: '0'}
@@ -25,7 +21,6 @@ function Home() {
         <h2 className="title">
           WELCOME TO JKT48 THEATER SCHEDULE
         </h2>
-        <p>{name}</p>
       </Col>
       <Row className="App">
         {dataTeam.slice(0, 3).map((item, idx) => (

@@ -1,88 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Card, Button, CardTitle, CardText, UncontrolledCarousel } from 'reactstrap';
+import { useDispatch, useSelector } from 'react-redux';
 
 import '../team/Team.css';
 import Loading from '../menu/Loading';
-
-import Team from '../../store/Team';
-import Members from '../../store/Member';
-import Carousels from '../../store/Carousel';
-import Schedules from '../../store/Schedule';
 
 function CardTicket(props) {
   const [section, setSection] = useState('description');
   const [loading, setLoading] = useState(false);
 
+  const {team, name, member, schedule, banner} = useSelector(state => state.TeamReducer);
+  const dispatch = useDispatch();
+
+  let dispatchType = '';
+  let path = window.location.pathname;
+
   useEffect(() => {
     setLoading(true)
+    dispatch({ type: dispatchType })
     setTimeout(() => {
       setLoading(false)
     }, 800);
   }, [section])
   
-  let name = '';
-  let team = '';
-  let member = '';
-  let schedule = '';
-  let banner = '';
-  let path = window.location.pathname;
-
-  const Team_J = Team.slice(0, 1);
-  const Team_K = Team.slice(1, 2);
-  const Team_T = Team.slice(2, 3);
-  const Academy = Team.slice(3, 4);
-  const Package = Team.slice(4, 5);
-
-  const Member_J = Members[0].Team_J;
-  const Member_K = Members[1].Team_K;
-  const Member_T = Members[2].Team_T;
-  const Member_A = Members[3].Academy;
-
-  const Banner_J = Carousels.TEAM_J;
-  const Banner_K = Carousels.TEAM_K;
-  const Banner_T = Carousels.TEAM_T;
-  const Banner_A = Carousels.ACADEMY;
-  const Banner_Packages = Carousels.SHOW_PACKAGES;
-
-  const Schedule_J = Schedules.TEAM_J;
-  const Schedule_K = Schedules.TEAM_K;
-  const Schedule_T = Schedules.TEAM_T;
-  const Schedule_A = Schedules.ACADEMY;
-  const Packages   = Schedules.PACKAGES;
-
   switch(path) {
     case '/team-j':
-      name = 'J'
-      team = Team_J
-      member = Member_J
-      banner = Banner_J
-      schedule = Schedule_J
+      dispatchType = 'TEAM_J'
       break
     case '/team-k':
-      name = 'KIII'
-      team = Team_K
-      member = Member_K
-      banner = Banner_K
-      schedule = Schedule_K
+      dispatchType = 'TEAM_K'
       break
     case '/team-t':
-      name = 'T'
-      team = Team_T
-      member = Member_T
-      banner = Banner_T
-      schedule = Schedule_T
+      dispatchType = 'TEAM_T'
       break
     case '/academy-class-a':
-      name = 'Academy Class A'
-      team = Academy
-      member = Member_A
-      banner = Banner_A
-      schedule = Schedule_A
+      dispatchType = 'ACADEMY'
       break
     default: 
-      team = Package
-      banner = Banner_Packages
-      schedule = Packages
+      dispatchType = 'PACKAGES'
     break
   }
 
