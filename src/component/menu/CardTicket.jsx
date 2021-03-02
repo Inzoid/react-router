@@ -71,7 +71,7 @@ function CardTicket(props) {
         team.map((item, idx) => (
           <Col sm="6" key={idx}>
             <UncontrolledCarousel items={banner} />
-            <Card style={{borderTopLeftRadius: '0', borderTopRightRadius: '0',  borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px'}} body inverse color={item.color} className="mb-3">
+            <Card style={{borderRadius: '0px 0px 20px 20px'}} body inverse color={item.color} className="mb-3">
               { loading ? <Loading /> :
                 <>
                   <CardTitle tag="h2">{item.name}</CardTitle>
@@ -81,7 +81,7 @@ function CardTicket(props) {
                   </CardTitle>
                   <TicketButton />
                   {path !== '/jkt48-theater-7-show-package' && 
-                    <Button color="success" onClick={() => setSection('member')}>
+                    <Button className="mb-2" color="success" onClick={() => setSection('member')}>
                       Lihat Line Up Member
                     </Button>
                   }
