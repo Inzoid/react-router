@@ -73,7 +73,7 @@ export default function Packages() {
             <Table>
               <thead>
                 <tr style={tableCss}>
-                  <th>Setlist & Team</th>
+                  <th>Setlist</th>
                   <th>Tanggal</th>
                 </tr>
               </thead>

@@ -1,5 +1,5 @@
-const month = 'JANUARY';
-const week = 'WEEK_3';
+const month = 'MARCH';
+const week = 'WEEK_1';
 
 const J = {
   JANUARY: {
@@ -30,6 +30,26 @@ const J = {
         color: 'primary',
         info: '1',
       }
+    ]
+  },
+  MARCH: {
+    WEEK_1: [
+      {
+        day: 'Kamis',
+        date: '4 Maret 2021',
+        time: '18:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-4-maret',
+        color: 'info',
+        info: '1',
+      },
+      {
+        day: 'Sabtu',
+        date: '6 Maret 2021',
+        time: '12:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fajar-sang-idola-6-maret',
+        color: 'primary',
+        info: '1',
+      },
     ]
   }
 }
@@ -64,6 +84,26 @@ const K = {
         info: '1',
       }
     ]
+  },
+  MARCH: {
+    WEEK_1 : [
+      {
+        day: 'Jumat',
+        date: '5 Maret 2021',
+        time: '18:00 WIB',
+        link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-5-maret',
+        color: 'info',
+        info: '1',
+      },
+      {
+        day: 'Minggu',
+        date: '7 Maret 2021',
+        time: '16:00 WIB',
+        link: 'https://www.tiket.com/to-do/cara-meminum-ramune-jkt48-show-7-maret',
+        color: 'primary',
+        info: '2',
+      },
+    ]
   }
 }
 
@@ -97,6 +137,26 @@ const T = {
         info: '1',
       }
     ]
+  },
+  MARCH: {
+    WEEK_1 : [
+      {
+        day: 'Rabu',
+        date: '3 Maret 2021',
+        time: '18:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-3-maret',
+        color: 'danger',
+        info: '1',
+      },
+      {
+        day: 'Minggu',
+        date: '7 Maret 2021',
+        time: '12:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-fly-team-t-7-maret',
+        color: 'primary',
+        info: '1',
+      },
+    ]
   }
 }
 
@@ -122,6 +182,18 @@ const A = {
         info: '1',
       }
     ]
+  },
+  MARCH: {
+    WEEK_1 : [
+      {
+        day: 'Sabtu',
+        date: '6 Maret 2021',
+        time: '16:00 WIB',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-pajama-drive-6-maret',
+        color: 'danger',
+        info: '1',
+      },
+    ]
   }
 }
 
@@ -140,6 +212,15 @@ const SHOW_PACKAGES = {
         link: 'https://www.tiket.com/to-do/konser-jkt48-theater-7-show-package-1st-week-januari-2021',
         color: 'info',
       }
+    ]
+  },
+  MARCH: {
+    WEEK_1 : [
+      {
+        date: 'Week 1',
+        link: 'https://www.tiket.com/to-do/konser-jkt48-theater-7-show-package-1st-week-march-2021',
+        color: 'info',
+      },
     ]
   }
 }

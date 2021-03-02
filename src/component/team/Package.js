@@ -10,15 +10,15 @@ function Package() {
     <Container>
       <Row>
         <Col>
-          <h3>JKT48 Theater Show (7 Show Package) – 1st Week January 2021</h3>
+          <h3>JKT48 Theater Show (7 Show Package) – 1st Week March 2021</h3>
         </Col>
       </Row>
       <Row>
-        <CardTicket price="IDR 150.000" />
+        <CardTicket price="IDR 175.000" />
         <Col>
           <Card body outline color="info">
             <CardText>
-              <CardTitle tag="h5">Jadwal JKT48 Theater 1st Week January 2021 </CardTitle>
+              <CardTitle tag="h5">Jadwal JKT48 Theater 1st Week March 2021 </CardTitle>
               <SchedulePackages />
             </CardText>
           </Card>

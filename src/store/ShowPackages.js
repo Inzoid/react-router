@@ -4,13 +4,13 @@ const week = 'WEEK_1';
 const SHOW = {
   JANUARY: {
     WEEK_1: [
-      { name: "Cara Meminum Ramune Team KIII", date: "6 Januari 2021 (Pukul 19.00 WIB)" },
-      { name: "Fajar Sang Idola Team J", date: "7 Januari 2021 (Pukul 19.00 WIB)" },
-      { name: "Fly! Team T! Team T", date: "8 Januari 2021 (Pukul 19.00 WIB)" },
-      { name: "Fajar Sang Idola Team J", date: "9 Januari 2021 (Pukul 14.00 WIB)" },
-      { name: "Pajama Drive oleh Academy Class A", date: "9 Januari 2021 (Pukul 19.00 WIB)" },
-      { name: "Cara Meminum Ramune Team KIII", date: "10 Januari 2021 (Pukul 14.00 WIB)" },
-      { name: "Fly! Team T!  Team T", date: "10 Januari 2021 (Pukul 19.00 WIB)" }
+      { name: "Fly! Team T!", date: "3 Maret 2021 (Pukul 18.00 WIB)" },
+      { name: "Fajar Sang Idola", date: "4 Maret 2021 (Pukul 18.00 WIB)" },
+      { name: "Cara Meminum Ramune", date: "5 Maret 2021 (Pukul 18.00 WIB)" },
+      { name: "Fajar Sang Idola", date: "6 Maret 2021 (Pukul 12.00 WIB)" },
+      { name: "Pajama Drive", date: "6 Maret 2021 (Pukul 16.00 WIB)" },
+      { name: "Fly! Team T!", date: " 7 Maret 2021 (Pukul 12.00 WIB)" },
+      { name: "Cara Meminum Ramune", date: "7 Maret 2021 (Pukul 16.00 WIB)" },
     ],
   }
 }
