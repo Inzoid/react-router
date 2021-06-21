@@ -9,32 +9,34 @@ const Navigation = (props) => {
 
   return (
     <Navbar className="nav" dark expand="md">
-      <NavbarBrand>
-        <Link className="menu" to="/"><b>JKT48 Theater Schedule</b></Link>
-      </NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <Nav className="mr-auto" navbar>
-          <NavItem>
-            <Link className="menu" to="/team-j">Team J</Link>
-          </NavItem>
-          <NavItem>
-            <Link className="menu" to="/team-k">Team KIII</Link>
-          </NavItem>
-          <NavItem>
-            <Link className="menu" to="/team-t">Team T</Link>
-          </NavItem>
-          <NavItem>
-            <Link className="menu" to="/academy-class-a">Academy Class A</Link>
-          </NavItem>
-          <NavItem>
-            <Link className="menu" to="/all-schedule">All Schedule</Link>
-          </NavItem>
-          <NavItem>
-            <Link className="menu" to="/about">About</Link>
-          </NavItem>
-        </Nav>
-      </Collapse>
+      <div className="container">
+        <NavbarBrand>
+          <Link className="menu" to="/"><b>JKT48 Theater Schedule</b></Link>
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <Link className="menu" to="/team-j">Team J</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="menu" to="/team-k">Team KIII</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="menu" to="/team-t">Team T</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="menu" to="/academy-class-a">Academy Class A</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="menu" to="/all-schedule">All Schedule</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="menu" to="/about">About</Link>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </div>
     </Navbar>
   );
 }

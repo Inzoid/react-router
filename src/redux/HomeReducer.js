@@ -1,7 +1,5 @@
-import Team from '../store/Team';
-
 const initialState = {
-  dataTeam: [],
+  data: [],
 }
 
 const HomeReducer = (state = initialState , action) => {
@@ -9,7 +7,7 @@ const HomeReducer = (state = initialState , action) => {
     case 'HOME':
       return {
         ...state,
-        dataTeam: Team,
+        data: action.payload,
       }
     default:
       return state

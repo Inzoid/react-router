@@ -9,7 +9,7 @@ function CardTicket(props) {
   const [section, setSection] = useState('description');
   const [loading, setLoading] = useState(false);
 
-  const {team, name, member, schedule, banner} = useSelector(state => state.TeamReducer);
+  const {team, name, member, schedule, banner} = useSelector(state => state.storeTeam);
   const dispatch = useDispatch();
 
   let dispatchType = '';
@@ -25,19 +25,19 @@ function CardTicket(props) {
   
   switch(path) {
     case '/team-j':
-      dispatchType = 'TEAM_J'
+      dispatchType = 'GET_TEAM_J'
       break
     case '/team-k':
-      dispatchType = 'TEAM_K'
+      dispatchType = 'GET_TEAM_K'
       break
     case '/team-t':
-      dispatchType = 'TEAM_T'
+      dispatchType = 'GET_TEAM_T'
       break
     case '/academy-class-a':
-      dispatchType = 'ACADEMY'
+      dispatchType = 'GET_ACADEMY'
       break
     default: 
-      dispatchType = 'PACKAGES'
+      dispatchType = 'GET_PACKAGES'
     break
   }
 

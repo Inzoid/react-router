@@ -13,7 +13,7 @@ const initialState = {
 
 const TeamReducer = (state = initialState , action) => {
   switch (action.type) {
-    case 'TEAM_J':
+    case 'GET_TEAM_J':
       return {
         ...state,
         name: 'J',
@@ -22,7 +22,7 @@ const TeamReducer = (state = initialState , action) => {
         schedule: Schedules.TEAM_J,
         banner: Banner.TEAM_J,
       }
-    case 'TEAM_K':
+    case 'GET_TEAM_K':
       return {
         ...state,
         name: 'KII',
@@ -31,7 +31,7 @@ const TeamReducer = (state = initialState , action) => {
         schedule: Schedules.TEAM_K,
         banner: Banner.TEAM_K,
       }
-    case 'TEAM_T':
+    case 'GET_TEAM_T':
       return {
         ...state,
         name: 'T',
@@ -40,7 +40,7 @@ const TeamReducer = (state = initialState , action) => {
         schedule: Schedules.TEAM_T,
         banner: Banner.TEAM_T,
       }
-    case 'ACADEMY':
+    case 'GET_ACADEMY':
       return {
         ...state,
         name: 'Academy',
@@ -49,7 +49,7 @@ const TeamReducer = (state = initialState , action) => {
         schedule: Schedules.ACADEMY,
         banner: Banner.ACADEMY,
       }
-    case 'PACKAGES':
+    case 'GET_PACKAGES':
       return {
         ...state,
         name: 'Packages',

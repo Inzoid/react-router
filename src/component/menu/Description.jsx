@@ -4,28 +4,28 @@ import { Row, Col, Button, CardTitle, CardText, Table } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Description(props) {
-  const {setlist, member, encore} = useSelector(state => state.DescReducer)
+  const { team, setlist, member, encore } = useSelector(state => state.storeDescription)
   const dispatch = useDispatch();
 
   let dispatchType = '';
-  let team =  props.team ;
+  let teamName =  props.team ;
   let path = window.location.pathname;
 
   switch(path) {
     case '/team-j':
-      dispatchType = 'TEAM_J'
+      dispatchType = 'GET_DESC_TEAM_J'
       break
     case '/team-k':
-      dispatchType = 'TEAM_K'
+      dispatchType = 'GET_DESC_TEAM_K'
       break
     case '/team-t':
-      dispatchType = 'TEAM_T'
+      dispatchType = 'GET_DESC_TEAM_T'
       break
     case '/academy-class-a':
-      dispatchType = 'ACADEMY'
+      dispatchType = 'GET_DESC_ACADEMY'
       break
     default: 
-      dispatchType = 'PACKAGES'
+      dispatchType = 'GET_DESC_PACKAGES'
     break
   }
 
@@ -123,7 +123,10 @@ function Description(props) {
 
   useEffect(() => {
     setLoading(true)
-    dispatch({ type: dispatchType })
+    dispatch({ 
+      type: dispatchType, 
+      payload: teamName 
+    })
     setTimeout(() => {
       setLoading(false)
     }, 1000);
